@@ -1,8 +1,17 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Index } from "./pages/index";
 
-const Greet = () => <h1>Hello, world stinkers!</h1>
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <Greet />,
-  document.getElementById("root")
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="projects" element={ <div>projects</div> }>
+        <Route path=":projectId" element={ <Project /> }>
+      </Route>
+    </Routes>
+  </BrowserRouter>,
+  rootElement
 );
