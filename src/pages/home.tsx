@@ -1,4 +1,9 @@
 import React from "react";
 
-export const Home = () =>
-  <h1>Index</h1>;
+import { useProjects } from "../hooks/contentful";
+
+export const Home = () => {
+  useProjects();
+
+  return <h1>Index</h1>;
+};

@@ -11,6 +11,7 @@ ReactDOM.render(
       <Route path="/" element={<RootRedirect />} />
       <Route path=":lang" element={<Layout />}>
         <Route index path="" element={<Home />} />
+
         <Route path="projects" element={ <div>projects</div> } />
         <Route path="projects/:projectId" element={<Project />} />
       </Route>

@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-pnpPlugin = require("@yarnpkg/esbuild-plugin-pnp").pnpPlugin;
+const pnpPlugin = require("@yarnpkg/esbuild-plugin-pnp").pnpPlugin;
 
 require("esbuild").build({
   entryPoints: ["src/app.tsx"],
   bundle: true,
+  minify: true,
   watch: {
     onRebuild(error, result) {
       if (error) console.error("watch build failed:", error)
