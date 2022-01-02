@@ -1,33 +1,31 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet } from 'react-router-dom';
 
-import { ENGLISH, POLISH } from "../components/constants";
+import { ENGLISH, POLISH } from '../components/constants';
 
-export const Layout = () => {
+export function Layout() {
   const { lang } = useParams();
 
   return (
-    <>
-      <Wrapper>
-        <TopLeft to="projects">PROJECTS</TopLeft>
-        <BottomLeft to="contact">CONTACT</BottomLeft>
-        <TopRight to="studio">STUDIO</TopRight>
-        { lang == ENGLISH && (
-          <BottomRight to="/pl">PL</BottomRight>
-        )}
-        { lang == POLISH && (
-          <BottomRight to="/en">ENG</BottomRight>
-        )}
-        <Logo>problonde</Logo>
-        <ContentWrap>
-          <Outlet />
-        </ContentWrap>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <TopLeft to="projects">PROJECTS</TopLeft>
+      <BottomLeft to="contact">CONTACT</BottomLeft>
+      <TopRight to="studio">STUDIO</TopRight>
+      { lang === ENGLISH && (
+      <BottomRight to="/pl">PL</BottomRight>
+      )}
+      { lang === POLISH && (
+      <BottomRight to="/en">ENG</BottomRight>
+      )}
+      <Logo>problonde</Logo>
+      <ContentWrap>
+        <Outlet />
+      </ContentWrap>
+    </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   font-family: "General Sans", sans-serif;
@@ -62,19 +60,19 @@ const BigLink = styled(Link)`
 const TopLeft = styled(BigLink)`
   top: 60px;
   left: 80px;
-`
+`;
 
 const TopRight = styled(BigLink)`
   top: 60px;
   right: 80px;
-`
+`;
 
 const BottomLeft = styled(BigLink)`
   bottom: 60px;
   left: 80px;
-`
+`;
 
 const BottomRight = styled(BigLink)`
   bottom: 60px;
   right: 80px;
-`
+`;

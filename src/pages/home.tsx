@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { useProjects } from "../hooks/contentful";
+import { useProjects } from '../hooks/contentful';
 
-export const Home = () => {
+export function Home() {
   useProjects();
 
   return <h1>Index</h1>;
-};
+}

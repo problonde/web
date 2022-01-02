@@ -4,7 +4,8 @@
   "scripts": {
     "build": "./scripts/build.js",
     "watch": "./scripts/watch.js",
-    "serve": "http-server -o -c-1 --push-state"
+    "serve": "http-server -o -c-1 --push-state",
+    "lint": "eslint src/* --ext ts --ext tsx"
   },
   "dependencies": {
     "@types/react": "^17.0.38",
@@ -22,8 +23,16 @@
     "@types/eslint": "^8",
     "@types/react-is": "^17",
     "@types/styled-components": "^5",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "^5.8.1",
     "esbuild": "^0.14.9",
     "eslint": "^8.6.0",
+    "eslint-config-airbnb": "latest",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "spa-http-server": "^0.9.0",
     "typescript": "^4.5.4",
     "typescript-language-server": "^0.8.1"

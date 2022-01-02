@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { DEFAULT_LANGUAGE } from "../components/constants";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { DEFAULT_LANGUAGE } from '../components/constants';
 
-export const RootRedirect = () => {
+export function RootRedirect() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -10,4 +10,4 @@ export const RootRedirect = () => {
   });
 
   return null;
-};
+}
