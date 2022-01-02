@@ -1,9 +1,55 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { useProjects } from '../hooks/contentful';
+import { useGlobalState } from '../state/global';
 
 export function Home() {
-  useProjects();
+  const { data } = useProjects();
+  const { items } = data;
+  const [, setBackground] = useGlobalState('background');
 
-  return <h1>Index</h1>;
+  const handleEnter = (fields) => (
+    () => { setBackground(fields.color); }
+  );
+
+  const handleLeave = () => {
+    setBackground('#FFFFFF');
+  };
+
+  return (
+    <ProjectList>
+      {items.map((item) => (
+        <ProjectItem key={item.sys.id}>
+          <ProjectLink onMouseEnter={handleEnter(item.fields)} onMouseLeave={handleLeave} to={`projects/${item.sys.id}`}>
+            {item.fields.projectName}
+          </ProjectLink>
+        </ProjectItem>
+      ))}
+    </ProjectList>
+  );
 }
+
+const ProjectList = styled.ul`
+  font-size: 45px;
+  line-height: 61px;
+  padding-top: 100px;
+  width: 100%;
+  text-align: center;
+`;
+
+const ProjectItem = styled.li`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const ProjectLink = styled(Link)`
+  text-decoration: none;
+  color: #000000;
+
+  &:hover {
+    text-decoration: line-through;
+  }
+`;

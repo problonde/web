@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
-import { useProjects } from '../hooks/contentful';
+
+import { useProject } from '../hooks/contentful';
+import { useGlobalState } from '../state/global';
 
 export function Project() {
   const { projectId } = useParams();
   // add loading and error
-  const { data = { items: [] } } = useProjects();
-  const { items } = data;
+  const [, setBackground] = useGlobalState('background');
+  const { data, loading } = useProject(projectId);
+  const { fields } = data;
+
+  useEffect(() => {
+    if (fields) {
+      setBackground(fields.color);
+    }
+
+    return () => setBackground();
+  }, [fields]);
+
+  if (loading) {
+    return null;
+  }
+
+  const { projectName } = fields;
 
   return (
-    <div>
+    <Wrapper>
       <h2>
-        Project
-        {projectId}
+        {projectName}
       </h2>
-      {items.map((item) => (
-        <h3>{item.fields.projectName}</h3>
-      ))}
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div``;

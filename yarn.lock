@@ -2626,6 +2626,7 @@ __metadata:
     eslint-plugin-react-hooks: ^4.3.0
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-hooks-global-state: ^1.0.2
     react-is: ^17.0.2
     react-router-dom: ^6.2.1
     spa-http-server: ^0.9.0
@@ -2686,6 +2687,15 @@ __metadata:
   peerDependencies:
     react: 17.0.2
   checksum: 1c1eaa3bca7c7228d24b70932e3d7c99e70d1d04e13bb0843bbf321582bc25d7961d6b8a6978a58a598af2af496d1cedcfb1bf65f6b0960a0a8161cb8dab743c
+  languageName: node
+  linkType: hard
+
+"react-hooks-global-state@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "react-hooks-global-state@npm:1.0.2"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 956c13b45ef080c8ca4b31836b87ed19564622bf952bef6fa023438b98c2a80d92c39f282321ca66c8e3fed6ed12b6c937ba2cfec70db37bb81f0437bc08bdb9
   languageName: node
   linkType: hard
 
