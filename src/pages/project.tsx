@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
 import { useProject } from '../hooks/contentful';
 import { useGlobalState } from '../state/global';
+
+import { ProjectDetail } from '../components';
 
 export function Project() {
   const { projectId } = useParams();
@@ -24,15 +26,7 @@ export function Project() {
     return null;
   }
 
-  const { projectName } = fields;
-
   return (
-    <Wrapper>
-      <h2>
-        {projectName}
-      </h2>
-    </Wrapper>
+    <ProjectDetail project={fields} />
   );
 }
-
-const Wrapper = styled.div``;

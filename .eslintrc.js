@@ -35,6 +35,7 @@ module.exports = {
             }
         ],
         "react/jsx-filename-extension": [ "warn", {"extensions": [".tsx"]} ],
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off"
     }
 };

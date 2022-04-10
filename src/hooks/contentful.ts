@@ -6,31 +6,41 @@ import {
   CONTENTFUL_URL,
 } from '../components/constants';
 
+const BASE = `${CONTENTFUL_URL}/spaces/${CONTENTFUL_SPACE}/`;
+
 export const useLinks = () => {
-  const url = contentfulUrl('link');
+  const url = entryUrl('link');
   const { data = { items: [] }, error, loading } = useFetch(url, {}, []);
 
   return { data, error, loading };
 };
 
 export const useProjects = () => {
-  const url = contentfulUrl('project');
+  const url = entryUrl('project');
   const { data = { items: [] }, error, loading } = useFetch(url, {}, []);
 
   return { data, error, loading };
 };
 
 export const useProject = (projectId) => {
-  const url = contentfulUrl('project', projectId);
+  const url = entryUrl('project', projectId);
   const { data = {}, error, loading } = useFetch(url, {}, []);
 
   return { data, error, loading };
 };
 
-const contentfulUrl = (type, id = null) => {
-  const base = `${CONTENTFUL_URL}/spaces/${CONTENTFUL_SPACE}/`;
+export const useAsset = (assetId) => {
+  const url = assetUrl(assetId);
+  const { data = {}, error, loading } = useFetch(url, {}, []);
+
+  return { data, error, loading };
+};
+
+const assetUrl = (id) => `${BASE}assets/${id}?access_token=${CONTENTFUL_TOKEN}`;
+
+const entryUrl = (type, id = null) => {
   if (id) {
-    return `${base}entries/${id}?access_token=${CONTENTFUL_TOKEN}`;
+    return `${BASE}entries/${id}?access_token=${CONTENTFUL_TOKEN}`;
   }
-  return `${base}entries?access_token=${CONTENTFUL_TOKEN}&content_type=${type}`;
+  return `${BASE}entries?access_token=${CONTENTFUL_TOKEN}&content_type=${type}`;
 };
