@@ -30,7 +30,7 @@ export function Asset({ assetId }) {
 }
 
 const Wrapper = styled.div`
-  margin-bottom: 60px;
+  padding-bottom: 60px;
 `;
 
 const NarrowWrapper = styled(Wrapper)`

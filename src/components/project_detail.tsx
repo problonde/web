@@ -18,4 +18,5 @@ export function ProjectDetail({ project }) {
 };
 
 const Wrapper = styled.div`
+  padding-top: 190px;
 `;
