@@ -12,4 +12,7 @@ export function Paragraph({ content }) {
 const P = styled.p`
   font-size: 30px;
   line-height: 36px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 100px;
 `;

@@ -49,7 +49,7 @@ const Wrapper = styled.div`
 `;
 
 const ContentWrap = styled.div`
-  padding: 100px;
+  padding: 100px 0;
 `;
 
 const Logo = styled.h1`

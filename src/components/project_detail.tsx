@@ -28,6 +28,4 @@ const Row = styled.div`
 `;
 
 const Wrapper = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
 `;

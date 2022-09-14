@@ -9,4 +9,5 @@ const H2 = styled.h2`
   font-size: 60px;
   line-height: 80px;
   margin-bottom: 60px;
+  padding: 0 100px;
 `;
