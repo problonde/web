@@ -12,6 +12,9 @@ export function Layout() {
   const { data } = useLinks();
   const { items } = data;
   const [background] = useGlobalBackground();
+
+  const date = new Date();
+
   const location = useLocation();
   const isHome = ['/pl', '/en'].includes(location.pathname);
   const intersectionRef = useRef(null);
@@ -29,20 +32,25 @@ export function Layout() {
       { lang === ENGLISH && (
         <BottomRight to="/pl">PL</BottomRight>
       )}
-      <Bottom>
-        {items.map((link, index) => (
-          <span key={link.fields.title}>
-            {index > 0 && (' / ')}
-            <BigA target="_blank" href={link.fields.link}>{link.fields.title}</BigA>
-          </span>
-        ))}
-      </Bottom>
       { lang === POLISH && (
         <BottomRight to="/en">ENG</BottomRight>
+      )}
+      { isHome && (
+        <Bottom>
+          {items.map((link, index) => (
+            <span key={link.fields.title}>
+              {index > 0 && (' / ')}
+              <BigA target="_blank" href={link.fields.link}>{link.fields.title}</BigA>
+            </span>
+          ))}
+        </Bottom>
       )}
       <Logo hidden={intersection && intersection.isIntersecting > 0}>problonde</Logo>
       {isHome && (<HugeLogo ref={intersectionRef}>problonde</HugeLogo>)}
       <Outlet />
+      <Footer>
+        created by Problonde Studio {date.getFullYear()}
+      </Footer>
     </Wrapper>
   );
 }
@@ -73,6 +81,15 @@ const HugeLogo = styled.h1`
   line-height: 100vh;
   text-align: center;
 `;
+
+const Footer = styled.div`
+  background: #fff;
+  font-size: 25px;
+  line-height: 36px;
+  padding-top: 100px;
+  height: 200px;
+  text-align: center;
+`
 
 const BigA = styled.a`
   text-decoration: none;
