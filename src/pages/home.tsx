@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import { useProjects } from '../hooks/contentful';
-import { useGlobalState } from '../state/global';
+import { useGlobalBackground } from '../state/global';
 
 export function Home() {
   const { data } = useProjects();
   const { items } = data;
-  const [, setBackground] = useGlobalState('background');
+  const [, setBackground] = useGlobalBackground();
 
   const handleEnter = (fields) => (
     () => { setBackground(fields.color); }

@@ -5,13 +5,13 @@ import { useIntersection } from 'react-use';
 
 import { ENGLISH, POLISH } from '../components/constants';
 import { useLinks } from '../hooks/contentful';
-import { useGlobalState } from '../state/global';
+import { useGlobalBackground } from '../state/global';
 
 export function Layout() {
   const { lang } = useParams();
   const { data } = useLinks();
   const { items } = data;
-  const [background] = useGlobalState('background');
+  const [background] = useGlobalBackground();
   const location = useLocation();
   const isHome = ['/pl', '/en'].includes(location.pathname);
   const intersectionRef = useRef(null);

@@ -3,14 +3,14 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useProject } from '../hooks/contentful';
-import { useGlobalState } from '../state/global';
+import { useGlobalBackground } from '../state/global';
 
 import { ProjectDetail } from '../components';
 
 export function Project() {
   const { projectId } = useParams();
   // add loading and error
-  const [, setBackground] = useGlobalState('background');
+  const [, setBackground] = useGlobalBackground();
   const { data, loading } = useProject(projectId);
   const { fields } = data;
 

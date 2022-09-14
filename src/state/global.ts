@@ -1,5 +1,3 @@
-import { createGlobalState } from 'react-hooks-global-state';
+import { createGlobalState } from 'react-use';
 
-export const { useGlobalState } = createGlobalState({
-  background: '#FFFFFF',
-});
+export const  useGlobalBackground = createGlobalState<string>('#FFFFFF');
