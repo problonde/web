@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home, Project } from './pages';
 import { Layout, RootRedirect } from './elements';
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<RootRedirect />} />
@@ -16,6 +17,5 @@ ReactDOM.render(
         <Route path="projects/:projectId" element={<Project />} />
       </Route>
     </Routes>
-  </BrowserRouter>,
-  rootElement,
+  </BrowserRouter>
 );
