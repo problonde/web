@@ -34,7 +34,8 @@ export function Home() {
 const ProjectList = styled.ul`
   font-size: 45px;
   line-height: 61px;
-  padding-top: 100px;
+  padding-top: 190px;
+  min-height: 100vh;
   width: 100%;
   text-align: center;
 `;

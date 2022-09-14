@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
+import { useIntersection } from 'react-use';
 
 import { ENGLISH, POLISH } from '../components/constants';
 import { useLinks } from '../hooks/contentful';
@@ -11,6 +12,14 @@ export function Layout() {
   const { data } = useLinks();
   const { items } = data;
   const [background] = useGlobalState('background');
+  const location = useLocation();
+  const isHome = ['/pl', '/en'].includes(location.pathname);
+  const intersectionRef = useRef(null);
+  const intersection = useIntersection(intersectionRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+  });
 
   return (
     <Wrapper background={background}>
@@ -31,7 +40,8 @@ export function Layout() {
       { lang === POLISH && (
         <BottomRight to="/en">ENG</BottomRight>
       )}
-      <Logo>problonde</Logo>
+      <Logo hidden={intersection && intersection.isIntersecting > 0}>problonde</Logo>
+      {isHome && (<HugeLogo ref={intersectionRef}>problonde</HugeLogo>)}
       <Outlet />
     </Wrapper>
   );
@@ -51,6 +61,16 @@ const Logo = styled.h1`
   font-size: 60px;
   margin: 30px auto 0;
   width: 100%;
+  text-align: center;
+  opacity: ${props => props.hidden ? "0" : "1"};
+`;
+
+const HugeLogo = styled.h1`
+  display: block;
+  font-size: 10vw;
+  margin: 0 auto;
+  height: 100vh;
+  line-height: 100vh;
   text-align: center;
 `;
 

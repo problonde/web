@@ -17,6 +17,7 @@
     "react-hooks-global-state": "^2.0.0",
     "react-is": "^18.2.0",
     "react-router-dom": "^6.4.0",
+    "react-use": "^17.4.0",
     "styled-components": "^5.3.5",
     "use-http": "^1.0.27",
     "util": "^0.12.4"
