@@ -32,9 +32,7 @@ export function Layout() {
         <BottomRight to="/en">ENG</BottomRight>
       )}
       <Logo>problonde</Logo>
-      <ContentWrap>
-        <Outlet />
-      </ContentWrap>
+      <Outlet />
     </Wrapper>
   );
 }
@@ -46,10 +44,6 @@ const Wrapper = styled.div`
   transition: all 0.2s;
 
   background: ${(props) => props.background};
-`;
-
-const ContentWrap = styled.div`
-  padding: 100px 0;
 `;
 
 const Logo = styled.h1`

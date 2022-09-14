@@ -21,10 +21,12 @@ export function Image({ assetId }) {
 }
 
 const Wrapper = styled.div`
+  margin-bottom: 60px;
 `;
 
 const NarrowWrapper = styled(Wrapper)`
-  padding: 0 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 `;
 
 const InnerImage = styled.img`

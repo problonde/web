@@ -8,24 +8,14 @@ export function ProjectDetail({ project }) {
 
   return (
     <Wrapper>
-      <Row>
-        <Image assetId={mainImage.sys.id} />
-      </Row>
-      <Row>
-        <Header>{projectName}</Header>
-      </Row>
+      <Image assetId={mainImage.sys.id} />
+      <Header>{projectName}</Header>
       {body.content.map((element, index) =>
-        <Row>
-          <ContentNode key={index} {...element} />
-        </Row>
+        <ContentNode key={index} {...element} />
       )}
     </Wrapper>
   );
 };
-
-const Row = styled.div`
-  margin-bottom: 60px;
-`;
 
 const Wrapper = styled.div`
 `;
