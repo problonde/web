@@ -12,3 +12,5 @@
 /public/*
 !/public/index.html
 !/public/_redirects
+
+/node_modules
