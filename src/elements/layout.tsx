@@ -96,7 +96,7 @@ const BigA = styled.a`
   color: #000000;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: line-through;
   }
 `;
 
@@ -106,7 +106,7 @@ const BigLink = styled(Link)`
   color: #000000;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: line-through;
   }
 `;
 
