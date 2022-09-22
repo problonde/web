@@ -10,7 +10,7 @@ export function ProjectDetail({ project }: any) {
     <Wrapper>
       <Asset assetId={mainImage.sys.id} />
       <Header>{projectName}</Header>
-      {body.content.map((element, index) => <ContentNode key={index} {...element} />)}
+      {body.content.map((element: any) => <ContentNode {...element} />)}
     </Wrapper>
   );
 }
