@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-pnpPlugin = require("@yarnpkg/esbuild-plugin-pnp").pnpPlugin;
+const { pnpPlugin } = require("@yarnpkg/esbuild-plugin-pnp");
 
 require("esbuild").build({
   entryPoints: ["src/app.tsx"],
