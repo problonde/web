@@ -11,10 +11,12 @@ root.render(
     <Routes>
       <Route path="/" element={<RootRedirect />} />
       <Route path=":lang" element={<Layout />}>
-        <Route index path="" element={<Home />} />
+        <Route path="" element={<Home />} />
 
-        <Route path="projects" element={<Projects />} />
-        <Route path="projects/:projectId" element={<Project />} />
+        <Route path="projects">
+          <Route path="" element={<Projects />} />
+          <Route path=":projectId" element={<Project />} />
+        </Route>
       </Route>
     </Routes>
   </BrowserRouter>,
