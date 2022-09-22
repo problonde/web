@@ -1,8 +1,8 @@
-export { Asset } from "./asset";
+export { Asset } from "./Asset";
 export { ContentNode } from "./ContentNode";
-export { Header } from "./header";
-export { Layout } from "./layout";
-export { Paragraph } from "./paragraph";
+export { Header } from "./Header";
+export { Layout } from "./Layout";
+export { Paragraph } from "./Paragraph";
 export { ProjectDetail } from "./ProjectDetail";
 export { ProjectsGrid } from "./ProjectsGrid";
-export { RootRedirect } from "./root_redirect";
+export { RootRedirect } from "./RootRedirect";

@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Paragraph } from "./paragraph";
-import { Asset } from "./asset";
+import { Asset, Paragraph } from ".";
 
 enum NodeType {
   ParagraphNode = "paragraph",
