@@ -38,5 +38,9 @@ module.exports = {
     "react/jsx-filename-extension": ["warn", { extensions: [".tsx"] }],
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
   },
 };

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { Header, Asset, ContentNode } from ".";
 import { useAsset } from "../hooks/contentful";
-import { ProjectType } from "./constants";
+import { ProjectType } from "../types";
 
 function ProjectItem({ project }: any) {
   const { data, loading } = useAsset(project.fields.mainImage.sys.id);
