@@ -898,6 +898,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3.20.1":
+  version: 3.25.2
+  resolution: "core-js@npm:3.25.2"
+  checksum: e93c6c645d44d98973efb07750975552ad405f080f5a563a99972ff6b2c5c6ee25705f55accd363f5dccd51e9e5f56be25e2be6c14a7294da65763e0e5659c02
+  languageName: node
+  linkType: hard
+
 "corser@npm:~2.0.0":
   version: 2.0.1
   resolution: "corser@npm:2.0.1"
@@ -2512,6 +2519,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonc-parser@npm:^3.1.0":
+  version: 3.2.0
+  resolution: "jsonc-parser@npm:3.2.0"
+  checksum: 946dd9a5f326b745aa326d48a7257e3f4a4b62c5e98ec8e49fa2bdd8d96cef7e6febf1399f5c7016114fd1f68a1c62c6138826d5d90bc650448e3cf0951c53c7
+  languageName: node
+  linkType: hard
+
 "jsonfile@npm:^6.0.1":
   version: 6.1.0
   resolution: "jsonfile@npm:6.1.0"
@@ -3009,6 +3023,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"picomatch@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "picomatch@npm:2.3.1"
+  checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
+  languageName: node
+  linkType: hard
+
 "pkg-up@npm:^4.0.0":
   version: 4.0.0
   resolution: "pkg-up@npm:4.0.0"
@@ -3074,6 +3095,7 @@ __metadata:
     typescript-language-server: ^1.2.0
     use-http: ^1.0.27
     util: ^0.12.4
+    vscode-langservers-extracted: ^4.4.0
   languageName: unknown
   linkType: soft
 
@@ -3202,7 +3224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.4":
+"regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.9":
   version: 0.13.9
   resolution: "regenerator-runtime@npm:0.13.9"
   checksum: 65ed455fe5afd799e2897baf691ca21c2772e1a969d19bb0c4695757c2d96249eb74ee3553ea34a91062b2a676beedf630b4c1551cc6299afb937be1426ec55e
@@ -3224,6 +3246,13 @@ __metadata:
   version: 3.2.0
   resolution: "regexpp@npm:3.2.0"
   checksum: a78dc5c7158ad9ddcfe01aa9144f46e192ddbfa7b263895a70a5c6c73edd9ce85faf7c0430e59ac38839e1734e275b9c3de5c57ee3ab6edc0e0b1bdebefccef8
+  languageName: node
+  linkType: hard
+
+"request-light@npm:^0.5.8":
+  version: 0.5.8
+  resolution: "request-light@npm:0.5.8"
+  checksum: 70cec43b32de465a0cd3dadf0931b8bfeeaa2cc1541739bdd0d6092987ddce0beadca3d2ce49e314fd54f19b43dc58835c66ca9a8efd07e47dafd4f3e0d82386
   languageName: node
   linkType: hard
 
@@ -3846,7 +3875,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.8.3":
+"typescript@npm:^4.0.5, typescript@npm:^4.8.3":
   version: 4.8.3
   resolution: "typescript@npm:4.8.3"
   bin:
@@ -3856,7 +3885,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.8.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.0.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.3#~builtin<compat/typescript>":
   version: 4.8.3
   resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=493e53"
   bin:
@@ -3986,6 +4015,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vscode-css-languageservice@npm:^6.0.1":
+  version: 6.1.1
+  resolution: "vscode-css-languageservice@npm:6.1.1"
+  dependencies:
+    vscode-languageserver-textdocument: ^1.0.7
+    vscode-languageserver-types: ^3.17.2
+    vscode-nls: ^5.2.0
+    vscode-uri: ^3.0.4
+  checksum: 483cfd9959e5803880149e74c6341f455d2d58ed5b189cf53b8e58ab705aabaa58f8e373316c05cd482db04dca9171b8c47ae247dc8e6005ecdad2b73f463992
+  languageName: node
+  linkType: hard
+
+"vscode-html-languageservice@npm:^5.0.0":
+  version: 5.0.2
+  resolution: "vscode-html-languageservice@npm:5.0.2"
+  dependencies:
+    vscode-languageserver-textdocument: ^1.0.7
+    vscode-languageserver-types: ^3.17.2
+    vscode-nls: ^5.2.0
+    vscode-uri: ^3.0.4
+  checksum: 11fa393f2115c1ecc9ff90502cd17c60268e2908ab0b794275d09d51587c9281d2d04897e2e6bd127d2d2b04bd229ed3211f3966eea3cdc5529999a9a1fcd1fb
+  languageName: node
+  linkType: hard
+
+"vscode-json-languageservice@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "vscode-json-languageservice@npm:5.1.0"
+  dependencies:
+    jsonc-parser: ^3.1.0
+    vscode-languageserver-textdocument: ^1.0.4
+    vscode-languageserver-types: ^3.17.1
+    vscode-nls: ^5.0.1
+    vscode-uri: ^3.0.3
+  checksum: 3b5f65045588f69ee53f3137a73118ec5decd948d0fd249f3f650869fa94a339b13e117aaef792158354bfaf3c728394275fe6c8f22d1b5971e0bdd4fe0c35d1
+  languageName: node
+  linkType: hard
+
 "vscode-jsonrpc@npm:8.0.2":
   version: 8.0.2
   resolution: "vscode-jsonrpc@npm:8.0.2"
@@ -4000,6 +4066,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vscode-langservers-extracted@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "vscode-langservers-extracted@npm:4.4.0"
+  dependencies:
+    core-js: ^3.20.1
+    jsonc-parser: ^3.1.0
+    regenerator-runtime: ^0.13.9
+    request-light: ^0.5.8
+    typescript: ^4.0.5
+    vscode-css-languageservice: ^6.0.1
+    vscode-html-languageservice: ^5.0.0
+    vscode-json-languageservice: ^5.1.0
+    vscode-languageserver: ^8.0.2
+    vscode-languageserver-textdocument: ^1.0.5
+    vscode-languageserver-types: ^3.17.2
+    vscode-markdown-languageservice: ^0.0.0-alpha.10
+    vscode-nls: ^5.0.1
+    vscode-uri: ^3.0.3
+  bin:
+    vscode-css-language-server: bin/vscode-css-language-server
+    vscode-eslint-language-server: bin/vscode-eslint-language-server
+    vscode-html-language-server: bin/vscode-html-language-server
+    vscode-json-language-server: bin/vscode-json-language-server
+    vscode-markdown-language-server: bin/vscode-markdown-language-server
+  checksum: d72f4ea84514a3adb5ad7de092bbfb9aa187de9b86b1e5cc3cf7ca8dd76e02c8a8fce3c12c819e894ee4c13358c58709bf9cd8213affd77573fad5b1ee26c5e4
+  languageName: node
+  linkType: hard
+
 "vscode-languageserver-protocol@npm:3.17.2, vscode-languageserver-protocol@npm:^3.17.2":
   version: 3.17.2
   resolution: "vscode-languageserver-protocol@npm:3.17.2"
@@ -4010,14 +4104,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-languageserver-textdocument@npm:1.0.7":
+"vscode-languageserver-textdocument@npm:1.0.7, vscode-languageserver-textdocument@npm:^1.0.4, vscode-languageserver-textdocument@npm:^1.0.5, vscode-languageserver-textdocument@npm:^1.0.7":
   version: 1.0.7
   resolution: "vscode-languageserver-textdocument@npm:1.0.7"
   checksum: 6018a8b2c87aeb6441419431909e9161e9659d214814193b029ca2b30d8b097d23538e4930942ef78f1440f52c57a93f7597144736b79ba1abd9f1a53c2ffbc0
   languageName: node
   linkType: hard
 
-"vscode-languageserver-types@npm:3.17.2":
+"vscode-languageserver-types@npm:3.17.2, vscode-languageserver-types@npm:^3.17.1, vscode-languageserver-types@npm:^3.17.2":
   version: 3.17.2
   resolution: "vscode-languageserver-types@npm:3.17.2"
   checksum: ef2d862d22f622b64de0f428773d50a5928ec6cdd485960a7564ebe4fd4a3c8bcd956f29eb15bc45a0f353846e62f39f6c764d2ab85ce774b8724411ba84342f
@@ -4035,10 +4129,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vscode-markdown-languageservice@npm:^0.0.0-alpha.10":
+  version: 0.0.0
+  resolution: "vscode-markdown-languageservice@npm:0.0.0"
+  dependencies:
+    picomatch: ^2.3.1
+    vscode-languageserver-textdocument: ^1.0.5
+    vscode-languageserver-types: ^3.17.1
+    vscode-nls: ^5.0.1
+    vscode-uri: ^3.0.3
+  checksum: cc1928e6ce35ef6d917115cd34f0bd28099c95ea62fcdf1182008959dd36f1e520f084724103640f134ab15c4c8267b2d4b866ec712d9482a0b2f3e0ce65bb69
+  languageName: node
+  linkType: hard
+
+"vscode-nls@npm:^5.0.1, vscode-nls@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "vscode-nls@npm:5.2.0"
+  checksum: c9f43c0f85000b3008fc4a3a8fc122e580f4f0402a77186c6c0f3219ca8ac258f4893c7a563d66f097a6da09951d7f5a7e6295d3e21dcbaec707937c9089b5a8
+  languageName: node
+  linkType: hard
+
 "vscode-uri@npm:^3.0.3":
   version: 3.0.3
   resolution: "vscode-uri@npm:3.0.3"
   checksum: 683bf9de835c3cef0b51c104a4949bf746148ded7c2287ebafcc506d20aa0e90b99385a972dba8132903420dba67fc33a5e146e30212c4a6b3ca5d74d1f95702
+  languageName: node
+  linkType: hard
+
+"vscode-uri@npm:^3.0.4":
+  version: 3.0.6
+  resolution: "vscode-uri@npm:3.0.6"
+  checksum: 8b6a36553d089309c09f7aa2ca8dae321a1cb7ff5dcab35f0914d5155d3110722bdb6de67dcb727df15fecd83221d11bb4ab1274a9116b9ccc05b86cefe60dfc
   languageName: node
   linkType: hard
 

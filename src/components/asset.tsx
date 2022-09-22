@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { useAsset } from '../hooks/contentful';
+import { useAsset } from "../hooks/contentful";
 
-export function Asset({ assetId }) {
+export function Asset({ assetId }: { assetId: string }) {
   const { data, loading } = useAsset(assetId);
   const { fields, metadata } = data;
 
@@ -12,13 +12,13 @@ export function Asset({ assetId }) {
   }
 
   const type = fields.file.contentType.split("/")[0];
-  const tags = metadata.tags.map((tag) => tag.sys.id);
+  const tags = metadata.tags.map((tag: any) => tag.sys.id);
 
-  const ChosenWrapper = tags.includes('wide') ? Wrapper : NarrowWrapper;
+  const ChosenWrapper = tags.includes("wide") ? Wrapper : NarrowWrapper;
 
   return (
     <ChosenWrapper>
-      { type == 'image' ? (
+      { type === "image" ? (
         <Image src={fields.file.url} />
       ) : (
         <Video controls>

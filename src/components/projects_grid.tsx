@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import { Header, Asset, ContentNode } from '../elements';
-import { useAsset } from '../hooks/contentful';
-import { ProjectType } from './constants';
+import { Header, Asset, ContentNode } from ".";
+import { useAsset } from "../hooks/contentful";
+import { ProjectType } from "./constants";
 
-function ProjectItem({ project }) {
+function ProjectItem({ project }: any) {
   const { data, loading } = useAsset(project.fields.mainImage.sys.id);
   const { fields } = data;
 
@@ -23,32 +23,38 @@ function ProjectItem({ project }) {
   );
 }
 
-function Filter({ filter, setFilter }) {
+type FilterProps = {
+  filter: ProjectType | null;
+  setFilter: (type: ProjectType) => void;
+};
+function Filter({ filter, setFilter }: FilterProps) {
   return (
     <FilterWrapper>
-      {Object.values(ProjectType).map((type) =>
-      <FilterLink href="#" active={type === filter} onClick={() => setFilter(type)}>
-        {type}
-      </FilterLink>
-      )}
+      {Object.values(ProjectType).map((type: ProjectType) => (
+        <FilterLink href="#" active={type === filter} onClick={() => setFilter(type)}>
+          {type}
+        </FilterLink>
+      ))}
     </FilterWrapper>
   );
 }
 
-export function ProjectsGrid({ projects }) {
-  const [filter, setFilter] = useState<ProjectType>(null);
-  const filteredProjects = filter ? projects.filter((project) => project.fields.projectType.includes(filter)) : projects
+export function ProjectsGrid({ projects }: any) {
+  const [filter, setFilter] = useState<ProjectType | null>(null);
+  const filteredProjects = filter ? projects.filter(
+    (project: any) => project.fields.projectType.includes(filter),
+  ) : projects;
   return (
     <Wrapper>
-      <Filter filter={filter} setFilter={setFilter}/>
+      <Filter filter={filter} setFilter={setFilter} />
       <Grid>
-        {filteredProjects.map((item) => (
+        {filteredProjects.map((item: any) => (
           <ProjectItem project={item} />
         ))}
       </Grid>
     </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   padding: 190px 100px;
@@ -64,10 +70,10 @@ const FilterWrapper = styled.div`
   padding-bottom: 27px;
   display: flex;
   justify-content: space-evenly;
-`
+`;
 
-const FilterLink = styled.a<{ active }>`
-  text-decoration: ${({ active }) => active ? 'line-through' : 'none' };
+const FilterLink = styled.a<{ active: boolean }>`
+  text-decoration: ${({ active }) => (active ? "line-through" : "none")};
   font-size: 35px;
   color: #000;
 
@@ -85,7 +91,7 @@ const Item = styled.li`
   margin: 0;
 `;
 
-const SquareLink = styled(Link)<{ color, image }>`
+const SquareLink = styled(Link)<{ color: string, image: string }>`
   transition: all .2s;
   display: block;
   width: 100%;

@@ -1,3 +1,3 @@
-import { createGlobalState } from 'react-use';
+import { createGlobalState } from "react-use";
 
-export const  useGlobalBackground = createGlobalState<string>('#FFFFFF');
+export const useGlobalBackground = createGlobalState<string>("#FFFFFF");

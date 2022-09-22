@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export function Paragraph({ content }) {
   return (
@@ -7,7 +7,7 @@ export function Paragraph({ content }) {
       {content.map(({ value }) => value)}
     </P>
   );
-};
+}
 
 const P = styled.p`
   font-size: 30px;

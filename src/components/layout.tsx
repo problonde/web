@@ -1,11 +1,13 @@
-import React, { useRef } from 'react';
-import styled from 'styled-components';
-import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
-import { useIntersection } from 'react-use';
+import React, { useRef } from "react";
+import styled from "styled-components";
+import {
+  useParams, useLocation, Link, Outlet,
+} from "react-router-dom";
+import { useIntersection } from "react-use";
 
-import { ENGLISH, POLISH } from '../components/constants';
-import { useLinks } from '../hooks/contentful';
-import { useGlobalBackground } from '../state/global';
+import { ENGLISH, POLISH } from "./constants";
+import { useLinks } from "../hooks/contentful";
+import { useGlobalBackground } from "../state/global";
 
 export function Layout() {
   const { lang } = useParams();
@@ -16,12 +18,12 @@ export function Layout() {
   const date = new Date();
 
   const location = useLocation();
-  const isHome = ['/pl', '/en'].includes(location.pathname);
+  const isHome = ["/pl", "/en"].includes(location.pathname);
   const intersectionRef = useRef(null);
   const intersection = useIntersection(intersectionRef, {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.5
+    rootMargin: "0px",
+    threshold: 0.5,
   });
 
   return (
@@ -37,9 +39,9 @@ export function Layout() {
       )}
       { isHome && (
         <Bottom>
-          {items.map((link, index) => (
+          {items.map((link: any, index: number) => (
             <span key={link.fields.title}>
-              {index > 0 && (' / ')}
+              {index > 0 && (" / ")}
               <BigA target="_blank" href={link.fields.link}>{link.fields.title}</BigA>
             </span>
           ))}
@@ -49,13 +51,15 @@ export function Layout() {
       {isHome && (<HugeLogo ref={intersectionRef}>problonde</HugeLogo>)}
       <Outlet />
       <Footer>
-        created by Problonde Studio {date.getFullYear()}
+        created by Problonde Studio
+        {" "}
+        {date.getFullYear()}
       </Footer>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ background: string }>`
   font-family: "General Sans", sans-serif;
   position: relative;
   min-height: 100vh;
@@ -70,7 +74,7 @@ const Logo = styled.h1`
   margin: 30px auto 0;
   width: 100%;
   text-align: center;
-  opacity: ${props => props.hidden ? "0" : "1"};
+  opacity: ${(props) => (props.hidden ? "0" : "1")};
 `;
 
 const HugeLogo = styled.h1`
@@ -89,7 +93,7 @@ const Footer = styled.div`
   padding-top: 100px;
   height: 200px;
   text-align: center;
-`
+`;
 
 const BigA = styled.a`
   text-decoration: none;

@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import { useProjects } from '../hooks/contentful';
-import { useGlobalBackground } from '../state/global';
+import { useProjects } from "../hooks/contentful";
+import { useGlobalBackground } from "../state/global";
 
 export function Home() {
   const { data } = useProjects();
@@ -15,7 +15,7 @@ export function Home() {
   );
 
   const handleLeave = () => {
-    setBackground('#FFFFFF');
+    setBackground("#FFFFFF");
   };
 
   return (

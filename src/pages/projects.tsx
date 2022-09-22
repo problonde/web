@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from "react";
 
-import { useProjects } from '../hooks/contentful';
-import { ProjectsGrid } from '../components';
+import { useProjects } from "../hooks/contentful";
+import { ProjectsGrid } from "../components";
 
 export function Projects() {
   const { data, loading } = useProjects();
