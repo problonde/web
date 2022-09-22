@@ -1,4 +1,4 @@
 export enum ProjectType {
-  "Graphic Design",
-  "Product Design",
+  GraphicDesign = "Graphic Design",
+  ProductDesign = "Product Design",
 }

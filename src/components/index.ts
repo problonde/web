@@ -4,5 +4,5 @@ export { Header } from "./header";
 export { Layout } from "./layout";
 export { Paragraph } from "./paragraph";
 export { ProjectDetail } from "./project_detail";
-export { ProjectsGrid } from "./projects_grid";
+export { ProjectsGrid } from "./ProjectsGrid";
 export { RootRedirect } from "./root_redirect";
