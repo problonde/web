@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import { useIntersection } from "react-use";
 
-import { ENGLISH, POLISH } from "./constants";
+import { Language } from "../types";
 import { useLinks } from "../hooks/contentful";
 import { useGlobalBackground } from "../state/global";
 
@@ -31,10 +31,10 @@ export function Layout() {
       <TopLeft to="projects">PROJECTS</TopLeft>
       <BottomLeft to="contact">CONTACT</BottomLeft>
       <TopRight to="studio">STUDIO</TopRight>
-      { lang === ENGLISH && (
+      { lang === Language.English && (
         <BottomRight to="/pl">PL</BottomRight>
       )}
-      { lang === POLISH && (
+      { lang === Language.Polish && (
         <BottomRight to="/en">ENG</BottomRight>
       )}
       { isHome && (
