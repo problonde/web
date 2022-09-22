@@ -1,15 +1,24 @@
 import React from "react";
-import styled from "styled-components";
 
 import { Paragraph } from "./paragraph";
 import { Asset } from "./asset";
-import { useAsset } from "../hooks/contentful";
 
-export function ContentNode({ data, content, nodeType }) {
+enum NodeType {
+  ParagraphNode = "paragraph",
+  AssetNode = "embedded-asset-block",
+}
+
+type Props = {
+  data: any;
+  content: any;
+  nodeType: NodeType;
+};
+
+export function ContentNode({ data, content, nodeType }:Props) {
   switch (nodeType) {
-    case "paragraph":
+    case NodeType.ParagraphNode:
       return (<Paragraph content={content} />);
-    case "embedded-asset-block":
+    case NodeType.AssetNode:
       return (<Asset assetId={data.target.sys.id} />);
     default:
       throw new Error("unhandled content type");

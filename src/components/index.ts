@@ -1,5 +1,5 @@
 export { Asset } from "./asset";
-export { ContentNode } from "./content_node";
+export { ContentNode } from "./ContentNode";
 export { Header } from "./header";
 export { Layout } from "./layout";
 export { Paragraph } from "./paragraph";
