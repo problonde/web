@@ -3,7 +3,11 @@ import styled from "styled-components";
 
 import { useAsset } from "../hooks/contentful";
 
-export function Asset({ assetId }: { assetId: string }) {
+type Props = {
+  assetId: string;
+  className?: string;
+}
+export function Asset({ assetId, className }:Props) {
   const { data, loading } = useAsset(assetId);
   const { fields, metadata } = data;
 
@@ -17,7 +21,7 @@ export function Asset({ assetId }: { assetId: string }) {
   const ChosenWrapper = tags.includes("wide") ? Wrapper : NarrowWrapper;
 
   return (
-    <ChosenWrapper>
+    <ChosenWrapper className={className}>
       { type === "image" ? (
         <Image src={fields.file.url} />
       ) : (
@@ -39,6 +43,10 @@ const NarrowWrapper = styled(Wrapper)`
 `;
 
 const Image = styled.img`
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  object-fit: contain;
   width: 100%;
 `;
 

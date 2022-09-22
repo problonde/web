@@ -60,44 +60,45 @@ export function Layout() {
 }
 
 const Wrapper = styled.div<{ background: string }>`
-  font-family: "General Sans", sans-serif;
-  position: relative;
-  min-height: 100vh;
-  transition: all 0.2s;
-
   background: ${(props) => props.background};
+  font-family: "General Sans", sans-serif;
+  min-height: 100vh;
+  position: relative;
+
+  transition: all 0.2s;
 `;
 
-const Logo = styled.h1`
-  position: fixed;
+const Logo = styled.h1<{ hidden: boolean }>`
   font-size: 60px;
   margin: 30px auto 0;
-  width: 100%;
+  opacity: ${({ hidden }) => (hidden ? "0" : "1")};
+  position: fixed;
   text-align: center;
-  opacity: ${(props) => (props.hidden ? "0" : "1")};
+  width: 100%;
+  z-index: 1;
 `;
 
 const HugeLogo = styled.h1`
   display: block;
   font-size: 10vw;
-  margin: 0 auto;
   height: 100vh;
   line-height: 100vh;
+  margin: 0 auto;
   text-align: center;
 `;
 
 const Footer = styled.div`
   background: #fff;
   font-size: 25px;
+  height: 200px;
   line-height: 36px;
   padding-top: 100px;
-  height: 200px;
   text-align: center;
 `;
 
 const BigA = styled.a`
-  text-decoration: none;
   color: #000000;
+  text-decoration: none;
 
   &:hover {
     text-decoration: line-through;
@@ -105,9 +106,9 @@ const BigA = styled.a`
 `;
 
 const BigLink = styled(Link)`
+  color: #000000;
   font-size: 35px;
   text-decoration: none;
-  color: #000000;
 
   &:hover {
     text-decoration: line-through;
@@ -116,12 +117,12 @@ const BigLink = styled(Link)`
 
 const Bottom = styled.div`
   bottom: 60px;
+  color: #000000;
+  font-size: 35px;
   left: 0;
-  width: 100%;
   position: fixed;
   text-align: center;
-  font-size: 35px;
-  color: #000000;
+  width: 100%;
 `;
 
 const FixedLink = styled(BigLink)`
@@ -130,13 +131,13 @@ const FixedLink = styled(BigLink)`
 `;
 
 const TopLeft = styled(FixedLink)`
-  top: 60px;
   left: 80px;
+  top: 60px;
 `;
 
 const TopRight = styled(FixedLink)`
-  top: 60px;
   right: 80px;
+  top: 60px;
 `;
 
 const BottomLeft = styled(FixedLink)`

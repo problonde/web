@@ -5,13 +5,17 @@ import { Link } from "react-router-dom";
 import { useProjects } from "../hooks/contentful";
 import { useGlobalBackground } from "../state/global";
 
-export function Home() {
+import { ProjectData, ProjectFields } from "../types/Project";
+
+export function ProjectsList() {
   const { data } = useProjects();
-  const { items } = data;
+  const { items }: { items: [ProjectData] } = data;
   const [, setBackground] = useGlobalBackground();
 
-  const handleEnter = (fields) => (
-    () => { setBackground(fields.color); }
+  const handleEnter = (fields: ProjectFields) => (
+    () => {
+      setBackground(fields.color);
+    }
   );
 
   const handleLeave = () => {
@@ -19,36 +23,36 @@ export function Home() {
   };
 
   return (
-    <ProjectList>
+    <List>
       {items.map((item) => (
-        <ProjectItem key={item.sys.id}>
+        <Item key={item.sys.id}>
           <ProjectLink onMouseEnter={handleEnter(item.fields)} onMouseLeave={handleLeave} to={`projects/${item.sys.id}`}>
             {item.fields.projectName}
           </ProjectLink>
-        </ProjectItem>
+        </Item>
       ))}
-    </ProjectList>
+    </List>
   );
 }
 
-const ProjectList = styled.ul`
+const List = styled.div`
   font-size: 45px;
   line-height: 61px;
-  padding-top: 190px;
   min-height: 100vh;
-  width: 100%;
+  padding-top: 190px;
+  position: relative;
   text-align: center;
+  width: 100%;
 `;
 
-const ProjectItem = styled.li`
-  list-style: none;
-  padding: 0;
-  margin: 0;
+const Item = styled.div`
+  position: relative;
+  z-index: 1;
 `;
 
 const ProjectLink = styled(Link)`
-  text-decoration: none;
   color: #000000;
+  text-decoration: none;
 
   &:hover {
     text-decoration: line-through;

@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export function Header({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export function Header({ children }: Props) {
   return <H2>{children}</H2>;
 }
 

@@ -18,6 +18,7 @@ module.exports = {
   plugins: [
     "react",
     "@typescript-eslint",
+    "better-styled-components",
   ],
   settings: {
     "import/resolver": {
@@ -45,5 +46,7 @@ module.exports = {
     "react/jsx-props-no-spreading": ["error", {
       exceptions: ["ContentNode"],
     }],
+    "better-styled-components/sort-declarations-alphabetically": 2,
+    "react/require-default-props": "off",
   },
 };

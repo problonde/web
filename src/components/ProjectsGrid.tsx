@@ -56,20 +56,20 @@ export function ProjectsGrid({ projects }: any) {
 }
 
 const Wrapper = styled.div`
-  padding: 190px 100px;
   min-height: 100vh;
+  padding: 190px 100px;
 `;
 
 const FilterWrapper = styled.div`
-  padding-bottom: 27px;
   display: flex;
   justify-content: space-evenly;
+  padding-bottom: 27px;
 `;
 
 const FilterLink = styled.a<{ active: boolean }>`
-  text-decoration: ${({ active }) => (active ? "line-through" : "none")};
-  font-size: 35px;
   color: #000;
+  font-size: 35px;
+  text-decoration: ${({ active }) => (active ? "line-through" : "none")};
 
   &:hover {
     text-decoration: line-through;
@@ -82,11 +82,11 @@ const Grid = styled.ul`
 `;
 
 const Item = styled.li`
+  aspect-ratio: 1;
   display: block;
   list-style: none;
-  aspect-ratio: 1;
-  padding: 0;
   margin: 0;
+  padding: 0;
 `;
 
 const SquareLink = styled(Link)<{ color: string, image: string }>`
