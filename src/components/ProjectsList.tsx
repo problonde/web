@@ -14,12 +14,12 @@ export function ProjectsList() {
 
   const handleEnter = (fields: ProjectFields) => (
     () => {
-      setBackground(fields.color);
+      setBackground({ full: true, color: fields.color });
     }
   );
 
   const handleLeave = () => {
-    setBackground("#FFFFFF");
+    setBackground({ full: true, color: "#FFFFFF" });
   };
 
   return (

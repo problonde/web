@@ -1,3 +1,7 @@
 import { createGlobalState } from "react-use";
 
-export const useGlobalBackground = createGlobalState<string>("#FFFFFF");
+export type Background = {
+  full: boolean;
+  color: string;
+};
+export const useGlobalBackground = createGlobalState<Background>({ full: true, color: "#FFFFFF" });

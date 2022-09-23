@@ -16,10 +16,10 @@ export function Project() {
 
   useEffect(() => {
     if (fields) {
-      setBackground(fields.color);
+      setBackground({ full: false, color: fields.color });
     }
 
-    return () => setBackground("#FFFFFF");
+    return () => setBackground({ full: true, color: "#FFFFFF" });
   }, [fields]);
 
   if (loading) {

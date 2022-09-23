@@ -7,7 +7,7 @@ import { useIntersection } from "react-use";
 
 import { Language } from "../types";
 import { useLinks } from "../hooks/contentful";
-import { useGlobalBackground } from "../state/global";
+import { Background, useGlobalBackground } from "../state/global";
 
 export function Layout() {
   const { lang } = useParams();
@@ -60,8 +60,8 @@ export function Layout() {
   );
 }
 
-const Wrapper = styled.div<{ background: string }>`
-  background: ${(props) => props.background};
+const Wrapper = styled.div<{ background: Background }>`
+  background: ${({ background: { color, full } }) => `linear-gradient(180deg, ${color} ${full ? "100%" : "150vh"}, #FFFFFF 0%)`};
   font-family: "General Sans", sans-serif;
   min-height: 100vh;
   position: relative;
