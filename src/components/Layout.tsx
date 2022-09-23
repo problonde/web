@@ -18,7 +18,8 @@ export function Layout() {
   const date = new Date();
 
   const location = useLocation();
-  const isHome = ["/pl", "/en"].includes(location.pathname);
+  // eslint-disable-next-line
+  const isHome = location.pathname.match(/^\/(pl|en)[\/]?$/);
   const intersectionRef = useRef(null);
   const intersection = useIntersection(intersectionRef, {
     root: null,
@@ -47,7 +48,7 @@ export function Layout() {
           ))}
         </Bottom>
       )}
-      <Logo hidden={intersection && intersection.isIntersecting > 0}>problonde</Logo>
+      <Logo hidden={!!intersection && intersection.isIntersecting}>problonde</Logo>
       {isHome && (<HugeLogo ref={intersectionRef}>problonde</HugeLogo>)}
       <Outlet />
       <Footer>
