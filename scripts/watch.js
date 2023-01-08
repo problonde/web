@@ -11,6 +11,9 @@ require("esbuild").build({
     },
   },
   plugins: [],
+  logOverride: {
+    "different-path-case": "info",
+  },
   outfile: "public/out.js",
 }).then((result) => {
   console.log("watching...");
