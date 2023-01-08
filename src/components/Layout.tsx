@@ -7,7 +7,7 @@ import { useIntersection } from "react-use";
 
 import { Language } from "../types";
 import { useLinks } from "../hooks/contentful";
-import { Background, useGlobalBackground } from "../state/global";
+import { Background, BackgroundType, useGlobalBackground } from "../state/global";
 
 export function Layout() {
   const { lang } = useParams();
@@ -60,8 +60,33 @@ export function Layout() {
   );
 }
 
+const backgroundCSS = ({ background: { type, color } }: { background: Background }) => {
+  switch (type) {
+    case BackgroundType.Animated:
+      return `
+        animation-name: background;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;`;
+    case BackgroundType.Half:
+      return `background: linear-gradient(180deg, ${color} "150vh"}, #FFFFFF 0%);`;
+    case BackgroundType.Full:
+    default:
+      return `background: ${color};`;
+  }
+};
+
 const Wrapper = styled.div<{ background: Background }>`
-  background: ${({ background: { color, full } }) => `linear-gradient(180deg, ${color} ${full ? "100%" : "150vh"}, #FFFFFF 0%)`};
+  @keyframes background {
+    0%     {background-color:#FFFFFF;}
+    20%  {background-color:#E3FFB5;}
+    40%  {background-color:#E57200;}
+    60%  {background-color:#5DADE2;}
+    80%  {background-color:#CC8899;}
+    100%  {background-color:#FFFFFF;}
+  }
+  ${backgroundCSS}
   font-family: "General Sans", sans-serif;
   min-height: 100vh;
   position: relative;
