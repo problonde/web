@@ -29,6 +29,13 @@ export const useProject = (projectId: string) => {
   return { data, error, loading };
 };
 
+export const useSimplePage = (pageId: string) => {
+  const url = entryUrl("simplePage", pageId);
+  const { data = {}, error, loading } = useFetch(url, {}, []);
+
+  return { data, error, loading };
+};
+
 export const useAsset = (assetId: string) => {
   const url = assetUrl(assetId);
   const { data = {}, error, loading } = useFetch(url, {}, []);
