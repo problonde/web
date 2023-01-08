@@ -366,6 +366,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^2":
+  version: 2.7.2
+  resolution: "@types/prettier@npm:2.7.2"
+  checksum: b47d76a5252265f8d25dd2fe2a5a61dc43ba0e6a96ffdd00c594cb4fd74c1982c2e346497e3472805d97915407a09423804cc2110a0b8e1b22cffcab246479b7
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.4
   resolution: "@types/prop-types@npm:15.7.4"
@@ -3070,12 +3077,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^2.8.2":
+  version: 2.8.2
+  resolution: "prettier@npm:2.8.2"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 740c56c2128d587d656ea1dde9bc9c3503dfc94db4f3ac387259215eeb2e216680bdad9d18a0c9feecc6b42cfa188d6fa777df4c36c1d00cedd4199074fbfbd2
+  languageName: node
+  linkType: hard
+
 "problondeweb@workspace:.":
   version: 0.0.0-use.local
   resolution: "problondeweb@workspace:."
   dependencies:
     "@remix-run/router": ^1.0.0
     "@types/eslint": ^8.4.6
+    "@types/prettier": ^2
     "@types/react": ^18.0.20
     "@types/react-dom": ^18.0.6
     "@types/react-is": ^17.0.3
@@ -3091,6 +3108,7 @@ __metadata:
     eslint-plugin-jsx-a11y: ^6.6.1
     eslint-plugin-react: ^7.31.8
     eslint-plugin-react-hooks: ^4.6.0
+    prettier: ^2.8.2
     react: ^18.2.0
     react-dom: ^18.2.0
     react-is: ^18.2.0
