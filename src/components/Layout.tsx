@@ -1,13 +1,15 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import {
-  useParams, useLocation, Link, Outlet,
-} from "react-router-dom";
+import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import { useIntersection } from "react-use";
 
 import { Language } from "../types";
 import { useLinks } from "../hooks/contentful";
-import { Background, BackgroundType, useGlobalBackground } from "../state/global";
+import {
+  Background,
+  BackgroundType,
+  useGlobalBackground,
+} from "../state/global";
 
 export function Layout() {
   const { lang } = useParams();
@@ -32,35 +34,35 @@ export function Layout() {
       <TopLeft to="projects">PROJECTS</TopLeft>
       <BottomLeft to="contact">CONTACT</BottomLeft>
       <TopRight to="studio">STUDIO</TopRight>
-      { lang === Language.English && (
-        <BottomRight to="/pl">PL</BottomRight>
-      )}
-      { lang === Language.Polish && (
-        <BottomRight to="/en">ENG</BottomRight>
-      )}
-      { isHome && (
+      {lang === Language.English && <BottomRight to="/pl">PL</BottomRight>}
+      {lang === Language.Polish && <BottomRight to="/en">ENG</BottomRight>}
+      {isHome && (
         <Bottom>
           {items.map((link: any, index: number) => (
             <span key={link.fields.title}>
-              {index > 0 && (" / ")}
-              <BigA target="_blank" href={link.fields.link}>{link.fields.title}</BigA>
+              {index > 0 && " / "}
+              <BigA target="_blank" href={link.fields.link}>
+                {link.fields.title}
+              </BigA>
             </span>
           ))}
         </Bottom>
       )}
-      <Logo hidden={!!intersection && intersection.isIntersecting}>problonde</Logo>
-      {isHome && (<HugeLogo ref={intersectionRef}>problonde</HugeLogo>)}
+      <Logo hidden={!!intersection && intersection.isIntersecting}>
+        problonde
+      </Logo>
+      {isHome && <HugeLogo ref={intersectionRef}>problonde</HugeLogo>}
       <Outlet />
-      <Footer>
-        created by Problonde Studio
-        {" "}
-        {date.getFullYear()}
-      </Footer>
+      <Footer>created by Problonde Studio {date.getFullYear()}</Footer>
     </Wrapper>
   );
 }
 
-const backgroundCSS = ({ background: { type, color } }: { background: Background }) => {
+const backgroundCSS = ({
+  background: { type, color },
+}: {
+  background: Background;
+}) => {
   switch (type) {
     case BackgroundType.Animated:
       return `
@@ -79,12 +81,24 @@ const backgroundCSS = ({ background: { type, color } }: { background: Background
 
 const Wrapper = styled.div<{ background: Background }>`
   @keyframes background {
-    0%     {background-color:#FFFFFF;}
-    20%  {background-color:#E3FFB5;}
-    40%  {background-color:#E57200;}
-    60%  {background-color:#5DADE2;}
-    80%  {background-color:#CC8899;}
-    100%  {background-color:#FFFFFF;}
+    0% {
+      background-color: #ffffff;
+    }
+    20% {
+      background-color: #e3ffb5;
+    }
+    40% {
+      background-color: #e57200;
+    }
+    60% {
+      background-color: #5dade2;
+    }
+    80% {
+      background-color: #cc8899;
+    }
+    100% {
+      background-color: #ffffff;
+    }
   }
   ${backgroundCSS}
   font-family: "General Sans", sans-serif;
@@ -114,7 +128,6 @@ const HugeLogo = styled.h1`
 `;
 
 const Footer = styled.div`
-  background: #fff;
   font-size: 25px;
   height: 200px;
   line-height: 36px;

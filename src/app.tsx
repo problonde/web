@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Home, Project, Projects } from "./pages";
+import { Contact, Home, Project, Projects } from "./pages";
 import { Layout, RootRedirect } from "./components";
 
 const container = document.getElementById("root");
@@ -13,6 +13,7 @@ root.render(
       <Route path="/" element={<RootRedirect />} />
       <Route path=":lang" element={<Layout />}>
         <Route path="" element={<Home />} />
+        <Route path="contact" element={<Contact />} />
 
         <Route path="projects">
           <Route path="" element={<Projects />} />
@@ -20,5 +21,5 @@ root.render(
         </Route>
       </Route>
     </Routes>
-  </BrowserRouter>,
+  </BrowserRouter>
 );
