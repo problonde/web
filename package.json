@@ -1,5 +1,5 @@
 {
-  "name": "problonde web",
+  "name": "problondeweb",
   "packageManager": "yarn@3.2.3",
   "compilerOptions": {
     "moduleResolution": "node"
