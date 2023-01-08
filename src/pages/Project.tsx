@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { useProject } from "../hooks/contentful";
-import { useGlobalBackground } from "../state/global";
+import { BackgroundType, useGlobalBackground } from "../state/global";
 
 import { ProjectDetail } from "../components";
 
@@ -16,10 +16,10 @@ export function Project() {
 
   useEffect(() => {
     if (fields) {
-      setBackground({ full: false, color: fields.color });
+      setBackground({ type: BackgroundType.Full, color: fields.color });
     }
 
-    return () => setBackground({ full: true, color: "#FFFFFF" });
+    return () => setBackground({ type: BackgroundType.Full, color: "#FFFFFF" });
   }, [fields]);
 
   if (loading) {

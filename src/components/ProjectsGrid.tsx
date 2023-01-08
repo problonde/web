@@ -24,14 +24,14 @@ function ProjectItem({ project }: any) {
 }
 
 type FilterProps = {
-  filter: ProjectType | null;
+  filter: ProjectType;
   setFilter: (type: ProjectType) => void;
 };
 function Filter({ filter, setFilter }: FilterProps) {
   return (
     <FilterWrapper>
       {Object.values(ProjectType).map((type: ProjectType) => (
-        <FilterLink href="#" active={type === filter} onClick={() => setFilter(type)}>
+        <FilterLink href="#" key={`p-filt-${type}`} active={type === filter} onClick={() => setFilter(type)}>
           {type}
         </FilterLink>
       ))}
@@ -40,8 +40,8 @@ function Filter({ filter, setFilter }: FilterProps) {
 }
 
 export function ProjectsGrid({ projects }: any) {
-  const [filter, setFilter] = useState<ProjectType | null>(null);
-  const filteredProjects = filter ? projects.filter(
+  const [filter, setFilter] = useState<ProjectType>(ProjectType.All);
+  const filteredProjects = filter !== ProjectType.All ? projects.filter(
     (project: any) => project.fields.projectType.includes(filter),
   ) : projects;
   const [, setBackground] = useGlobalBackground();
@@ -52,7 +52,7 @@ export function ProjectsGrid({ projects }: any) {
       <Filter filter={filter} setFilter={setFilter} />
       <Grid>
         {filteredProjects.map((item: any) => (
-          <ProjectItem project={item} />
+          <ProjectItem key={`pg-item-${item.sys.id}`} project={item} />
         ))}
       </Grid>
     </Wrapper>
