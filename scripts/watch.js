@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-const { pnpPlugin } = require("@yarnpkg/esbuild-plugin-pnp");
-
 require("esbuild").build({
   entryPoints: ["src/app.tsx"],
   bundle: true,
@@ -12,7 +10,7 @@ require("esbuild").build({
       else console.log("watch build succeeded:", result);
     },
   },
-  plugins: [pnpPlugin()],
+  plugins: [],
   outfile: "public/out.js",
 }).then((result) => {
   console.log("watching...");
