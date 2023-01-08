@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { useAsset } from "../hooks/contentful";
 import { ProjectType } from "../types";
+import { BackgroundType, useGlobalBackground } from "../state/global";
 
 function ProjectItem({ project }: any) {
   const { data, loading } = useAsset(project.fields.mainImage.sys.id);
@@ -43,6 +44,9 @@ export function ProjectsGrid({ projects }: any) {
   const filteredProjects = filter ? projects.filter(
     (project: any) => project.fields.projectType.includes(filter),
   ) : projects;
+  const [, setBackground] = useGlobalBackground();
+  setBackground({ type: BackgroundType.Full, color: "#FFFFFF" });
+
   return (
     <Wrapper>
       <Filter filter={filter} setFilter={setFilter} />
