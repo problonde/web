@@ -556,17 +556,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/esbuild-plugin-pnp@npm:^3.0.0-rc.15":
-  version: 3.0.0-rc.15
-  resolution: "@yarnpkg/esbuild-plugin-pnp@npm:3.0.0-rc.15"
-  dependencies:
-    tslib: ^2.4.0
-  peerDependencies:
-    esbuild: ">=0.10.0"
-  checksum: 04da15355a99773b441742814ba4d0f3453a83df47aa07e215f167e156f109ab8e971489c8b1a4ddf3c79d568d35213f496ad52e97298228597e1aacc22680aa
-  languageName: node
-  linkType: hard
-
 "acorn-jsx@npm:^5.3.2":
   version: 5.3.2
   resolution: "acorn-jsx@npm:5.3.2"
@@ -3102,7 +3091,6 @@ __metadata:
     "@types/styled-components": ^5.1.26
     "@typescript-eslint/eslint-plugin": ^5.37.0
     "@typescript-eslint/parser": ^5.37.0
-    "@yarnpkg/esbuild-plugin-pnp": ^3.0.0-rc.15
     esbuild: ^0.15.7
     eslint: ^8.23.1
     eslint-config-airbnb: ^19.0.4
