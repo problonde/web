@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { useProjects } from "../hooks/contentful";
-import { useGlobalBackground } from "../state/global";
+import { BackgroundType, useGlobalBackground } from "../state/global";
 
 import { ProjectData, ProjectFields } from "../types/Project";
 
@@ -14,12 +14,12 @@ export function ProjectsList() {
 
   const handleEnter = (fields: ProjectFields) => (
     () => {
-      setBackground({ full: true, color: fields.color });
+      setBackground({ type: BackgroundType.Full, color: fields.color });
     }
   );
 
   const handleLeave = () => {
-    setBackground({ full: true, color: "#FFFFFF" });
+    setBackground({ type: BackgroundType.Animated, color: "#FFFFFF" });
   };
 
   return (
