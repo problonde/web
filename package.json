@@ -44,6 +44,6 @@
     "spa-http-server": "^0.9.0",
     "typescript": "^4.9.5",
     "typescript-language-server": "^3.3.0",
-    "vscode-langservers-extracted": "^4.4.0"
+    "vscode-langservers-extracted": "^4.6.0"
   }
 }
