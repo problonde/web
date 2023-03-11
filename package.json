@@ -5,8 +5,8 @@
     "moduleResolution": "node"
   },
   "scripts": {
-    "build": "./scripts/build.js",
-    "watch": "./scripts/watch.js",
+    "build": "./scripts/build.mjs",
+    "watch": "./scripts/watch.mjs",
     "serve": "http-server -o -c-1 --push-state",
     "lint": "eslint src/* --ext ts --ext tsx",
     "types": " tsc --noEmit"
