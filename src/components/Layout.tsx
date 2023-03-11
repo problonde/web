@@ -109,8 +109,8 @@ const Wrapper = styled.div<{ background: Background }>`
 `;
 
 const Logo = styled.h1<{ hidden: boolean }>`
-  font-size: 60px;
-  margin: 30px auto 0;
+  font-size: 3.75rem;
+  margin: 2rem auto 0;
   opacity: ${({ hidden }) => (hidden ? "0" : "1")};
   position: fixed;
   text-align: center;
@@ -128,10 +128,10 @@ const HugeLogo = styled.h1`
 `;
 
 const Footer = styled.div`
-  font-size: 25px;
-  height: 200px;
-  line-height: 36px;
-  padding-top: 100px;
+  font-size: 1.5rem;
+  height: 12.5rem;
+  line-height: 2.25rem;
+  padding-top: 6.25rem;
   text-align: center;
 `;
 
@@ -146,7 +146,7 @@ const BigA = styled.a`
 
 const BigLink = styled(Link)`
   color: #000000;
-  font-size: 35px;
+  font-size: 2.2rem;
   text-decoration: none;
 
   &:hover {
@@ -155,9 +155,9 @@ const BigLink = styled(Link)`
 `;
 
 const Bottom = styled.div`
-  bottom: 60px;
+  bottom: 3.75rem;
   color: #000000;
-  font-size: 35px;
+  font-size: 2.2rem;
   left: 0;
   position: fixed;
   text-align: center;
@@ -170,21 +170,21 @@ const FixedLink = styled(BigLink)`
 `;
 
 const TopLeft = styled(FixedLink)`
-  left: 80px;
-  top: 60px;
+  left: 5rem;
+  top: 3.75rem;
 `;
 
 const TopRight = styled(FixedLink)`
-  right: 80px;
-  top: 60px;
+  right: 5rem;
+  top: 3.75rem;
 `;
 
 const BottomLeft = styled(FixedLink)`
-  bottom: 60px;
-  left: 80px;
+  bottom: 3.75rem;
+  left: 5rem;
 `;
 
 const BottomRight = styled(FixedLink)`
-  bottom: 60px;
-  right: 80px;
+  bottom: 3.75rem;
+  right: 5rem;
 `;

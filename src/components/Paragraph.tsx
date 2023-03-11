@@ -18,6 +18,7 @@ type Content = Text | Hyperlink;
 
 type Props = {
   content: Content[];
+  className?: string;
 };
 
 const contentToTag = (content: Content) => {
@@ -31,8 +32,12 @@ const contentToTag = (content: Content) => {
   }
 };
 
-export function Paragraph({ content }: Props) {
-  return <P>{content.map((inner: Content) => contentToTag(inner))}</P>;
+export function Paragraph({ className, content }: Props) {
+  return (
+    <P className={className}>
+      {content.map((inner: Content) => contentToTag(inner))}
+    </P>
+  );
 }
 
 const P = styled.p`
