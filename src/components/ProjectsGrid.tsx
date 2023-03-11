@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,11 @@ function ProjectItem({ project }: any) {
 
   return (
     <Item key={project.sys.id}>
-      <SquareLink image={fields.file.url} color={project.fields.color} to={`${project.sys.id}`}>
+      <SquareLink
+        image={fields.file.url}
+        color={project.fields.color}
+        to={`${project.sys.id}`}
+      >
         <span>{project.fields.projectName}</span>
       </SquareLink>
     </Item>
@@ -28,10 +32,19 @@ type FilterProps = {
   setFilter: (type: ProjectType) => void;
 };
 function Filter({ filter, setFilter }: FilterProps) {
+  const wrapClick = (callback: () => void) => (e: any) => {
+    e.preventDefault();
+    callback();
+  };
   return (
     <FilterWrapper>
       {Object.values(ProjectType).map((type: ProjectType) => (
-        <FilterLink href="#" key={`p-filt-${type}`} active={type === filter} onClick={() => setFilter(type)}>
+        <FilterLink
+          href="#"
+          key={`p-filt-${type}`}
+          active={type === filter}
+          onClick={wrapClick(() => setFilter(type))}
+        >
           {type}
         </FilterLink>
       ))}
@@ -41,11 +54,16 @@ function Filter({ filter, setFilter }: FilterProps) {
 
 export function ProjectsGrid({ projects }: any) {
   const [filter, setFilter] = useState<ProjectType>(ProjectType.All);
-  const filteredProjects = filter !== ProjectType.All ? projects.filter(
-    (project: any) => project.fields.projectType.includes(filter),
-  ) : projects;
+  const filteredProjects =
+    filter !== ProjectType.All
+      ? projects.filter((project: any) =>
+          project.fields.projectType.includes(filter)
+        )
+      : projects;
   const [, setBackground] = useGlobalBackground();
-  setBackground({ type: BackgroundType.Full, color: "#FFFFFF" });
+  useEffect(() => {
+    setBackground({ type: BackgroundType.Full, color: "#FFFFFF" });
+  }, []);
 
   return (
     <Wrapper>
@@ -93,7 +111,7 @@ const Item = styled.li`
   padding: 0;
 `;
 
-const SquareLink = styled(Link)<{ color: string, image: string }>`
+const SquareLink = styled(Link)<{ color: string; image: string }>`
   transition: all .2s;
   display: block;
   width: 100%;
