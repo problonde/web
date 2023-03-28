@@ -3259,7 +3259,7 @@ __metadata:
     spa-http-server: ^0.9.0
     styled-components: ^5.3.9
     typescript: ^5.0.2
-    typescript-language-server: ^3.3.0
+    typescript-language-server: ^3.3.1
     use-http: ^1.0.27
     util: ^0.12.5
     vscode-langservers-extracted: ^4.6.0
@@ -4027,12 +4027,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-language-server@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "typescript-language-server@npm:3.3.0"
+"typescript-language-server@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "typescript-language-server@npm:3.3.1"
   bin:
     typescript-language-server: lib/cli.mjs
-  checksum: 7bd64056540248eef58fe6491b5258e9d949c7e0d832179f32e59ce1b92994ff17987a0c6af6ef98c13e1e73e9d18bb9a263bfce29dd7e988b3132655f884337
+  checksum: 9fcfbe1e71df88aecb8e1d4b94e585fba11e50f72dd634f0bb4335f8a2fe045dd79072ced45664c6badc6db80068c52d255ea61aadcdca3c1e411a830d4c8f3f
   languageName: node
   linkType: hard
 
