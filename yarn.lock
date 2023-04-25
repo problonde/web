@@ -780,6 +780,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vscode/l10n@npm:^0.0.13":
+  version: 0.0.13
+  resolution: "@vscode/l10n@npm:0.0.13"
+  checksum: 9bec12071a6b626b570d2a6fb79f25f382deb6cdb227a86270c6dde36ca6a32da94dde34503aa3f8cbccf9c283d52bcbd8b130e80d15970ce4960b1e9f223e52
+  languageName: node
+  linkType: hard
+
 "@xobotyi/scrollbar-width@npm:^1.9.5":
   version: 1.9.5
   resolution: "@xobotyi/scrollbar-width@npm:1.9.5"
@@ -3315,7 +3322,7 @@ __metadata:
     typescript-language-server: ^3.3.2
     use-http: ^1.0.27
     util: ^0.12.5
-    vscode-langservers-extracted: ^4.6.0
+    vscode-langservers-extracted: ^4.7.0
   languageName: unknown
   linkType: soft
 
@@ -4232,15 +4239,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-css-languageservice@npm:^6.2.3":
-  version: 6.2.4
-  resolution: "vscode-css-languageservice@npm:6.2.4"
+"vscode-css-languageservice@npm:^6.2.4":
+  version: 6.2.5
+  resolution: "vscode-css-languageservice@npm:6.2.5"
   dependencies:
-    "@vscode/l10n": ^0.0.11
+    "@vscode/l10n": ^0.0.13
     vscode-languageserver-textdocument: ^1.0.8
     vscode-languageserver-types: ^3.17.3
     vscode-uri: ^3.0.7
-  checksum: 3c7f8e06272fcb9866e97746afb13daed5e50b768effa00d4cfd9da4a607008bcd21803bd2a741b123b51efbdfdf4eb947c0652b785ef6b7b4bb90a466fefdac
+  checksum: 6b45dd06c23324380d811a30bc3ff267e1d31de7b920b54f98e300c30b732bd720bb33db458a98ecf8f98569f8b9b03cdbbd96b84b178de59225200174fcdf92
   languageName: node
   linkType: hard
 
@@ -4256,16 +4263,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-json-languageservice@npm:^5.1.4":
-  version: 5.3.2
-  resolution: "vscode-json-languageservice@npm:5.3.2"
+"vscode-json-languageservice@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "vscode-json-languageservice@npm:5.3.3"
   dependencies:
-    "@vscode/l10n": ^0.0.11
+    "@vscode/l10n": ^0.0.13
     jsonc-parser: ^3.2.0
     vscode-languageserver-textdocument: ^1.0.8
     vscode-languageserver-types: ^3.17.3
     vscode-uri: ^3.0.7
-  checksum: 9d928232d1f6a858152e2fb8a729b1417e5de093cf7a06ecb53ac65d08af58b6a39e3c55c45af3fdd6c7f62f96639df60246fc811953fb53c7492b8d3e66dd1f
+  checksum: 5c5c3a44f59e49ebff74c47a2ab1f4c1a2dc62bafdd2c1c4f996ac59af47cf8eb4eafc1228060f005ba740337b30c5fe47a2f995db1231ada593abb447ee1382
   languageName: node
   linkType: hard
 
@@ -4283,23 +4290,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-langservers-extracted@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "vscode-langservers-extracted@npm:4.6.0"
+"vscode-langservers-extracted@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "vscode-langservers-extracted@npm:4.7.0"
   dependencies:
-    "@vscode/l10n": ^0.0.11
+    "@vscode/l10n": ^0.0.13
     core-js: ^3.20.1
     jsonc-parser: ^3.2.0
     regenerator-runtime: ^0.13.9
     request-light: ^0.7.0
     typescript: ^4.0.5
-    vscode-css-languageservice: ^6.2.3
+    vscode-css-languageservice: ^6.2.4
     vscode-html-languageservice: ^5.0.4
-    vscode-json-languageservice: ^5.1.4
-    vscode-languageserver: ^8.1.0-next.6
-    vscode-languageserver-textdocument: ^1.0.9
-    vscode-languageserver-types: ^3.17.2
-    vscode-markdown-languageservice: ^0.3.0-alpha.3
+    vscode-json-languageservice: ^5.3.3
+    vscode-languageserver: ^8.1.0
+    vscode-languageserver-textdocument: ^1.0.10
+    vscode-languageserver-types: ^3.17.3
+    vscode-markdown-languageservice: ^0.3.0
     vscode-nls: ^5.2.0
     vscode-uri: ^3.0.7
   bin:
@@ -4308,7 +4315,7 @@ __metadata:
     vscode-html-language-server: bin/vscode-html-language-server
     vscode-json-language-server: bin/vscode-json-language-server
     vscode-markdown-language-server: bin/vscode-markdown-language-server
-  checksum: d25b6018d6527620bd176467d4fe8196f912287c3a53a538b2c60858d2329671e80f27657bfb34ea998d698072412db5b37f6cbcca5363ba3de5ea1d98bdf55e
+  checksum: 309ea80613939c10f608efc8ba97f0358d1293546d405d2435ed27735b02af874703f839c1a7fe77a6105709710e4925ab71aa58ed33d8bdf385bc1cb0d110fc
   languageName: node
   linkType: hard
 
@@ -4322,6 +4329,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vscode-languageserver-textdocument@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "vscode-languageserver-textdocument@npm:1.0.10"
+  checksum: 605ff0662535088567a145b48d28f0c41844d28269fa0b3fca3a1e179dd14baf7181150b274bf3840ef2a043ed8474a9227aaf169a6fae574516349a1b371a18
+  languageName: node
+  linkType: hard
+
 "vscode-languageserver-textdocument@npm:^1.0.5":
   version: 1.0.7
   resolution: "vscode-languageserver-textdocument@npm:1.0.7"
@@ -4329,7 +4343,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-languageserver-textdocument@npm:^1.0.8, vscode-languageserver-textdocument@npm:^1.0.9":
+"vscode-languageserver-textdocument@npm:^1.0.8":
   version: 1.0.9
   resolution: "vscode-languageserver-textdocument@npm:1.0.9"
   checksum: 36b76f725098d3e0d97885c05c51fca47388d9b62e936f6c8824c44a4fac7a96e1406538538a0f46ef1fdb9f1053ddc1cacb5e7b168cecb36d3c018942ec6f52
@@ -4350,7 +4364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-languageserver@npm:^8.1.0-next.6":
+"vscode-languageserver@npm:^8.1.0":
   version: 8.1.0
   resolution: "vscode-languageserver@npm:8.1.0"
   dependencies:
@@ -4361,16 +4375,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vscode-markdown-languageservice@npm:^0.3.0-alpha.3":
-  version: 0.3.0-alpha.6
-  resolution: "vscode-markdown-languageservice@npm:0.3.0-alpha.6"
+"vscode-markdown-languageservice@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "vscode-markdown-languageservice@npm:0.3.0"
   dependencies:
     "@vscode/l10n": ^0.0.10
     picomatch: ^2.3.1
     vscode-languageserver-textdocument: ^1.0.5
     vscode-languageserver-types: ^3.17.1
     vscode-uri: ^3.0.3
-  checksum: 42e31ab4beb2aaca7fd1e34c21947944b47830403a2ac1a3433e075357b0f714c29f67e74c56d8500ca14d7f0f19dc4e1cd00b15d667c30225563e4f7972b4aa
+  checksum: 648e501c482859be88564f5626ecc1289bb72c82efa291292240a2e62a22e6145e3a2eb2936a52e33a2a90c54c9311329fff2b24acd6a16976324a6cad60dc1f
   languageName: node
   linkType: hard
 
