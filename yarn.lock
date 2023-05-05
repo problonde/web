@@ -3275,7 +3275,7 @@ __metadata:
     styled-components: ^5.3.10
     typescript: ^5.0.4
     typescript-language-server: ^3.3.2
-    use-http: ^1.0.27
+    use-http: ^1.0.28
     util: ^0.12.5
     vscode-langservers-extracted: ^4.7.0
   languageName: unknown
@@ -4150,17 +4150,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-http@npm:^1.0.27":
-  version: 1.0.27
-  resolution: "use-http@npm:1.0.27"
+"use-http@npm:^1.0.28":
+  version: 1.0.28
+  resolution: "use-http@npm:1.0.28"
   dependencies:
     urs: ^0.0.8
     use-ssr: ^1.0.24
     utility-types: ^3.10.0
   peerDependencies:
-    react: ^16.13.1 || ^17.0.0
-    react-dom: ^16.13.1 || ^17.0.0
-  checksum: d5a5133a16f040b483bcbbf4752b716a5b049fbabd1ffbab57d86c2cf3b76aaa213d5fc6f0789a214f9bca04f22a4e70b37d104304e956d00145dd8c7bef6158
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: d13b35ba32eb3fc8696c0d2a642e7b90e0a5326cc06497438c03954a5cda817f24b7733e3a1029ebc5c748c8d64a6c4a9b829d21d8a9089a9757a4ad3d05a351
   languageName: node
   linkType: hard
 
