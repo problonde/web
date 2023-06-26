@@ -466,10 +466,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/router@npm:1.6.3, @remix-run/router@npm:^1.6.3":
+"@remix-run/router@npm:1.6.3":
   version: 1.6.3
   resolution: "@remix-run/router@npm:1.6.3"
   checksum: f6968b1626af930b42f8cb5a044f05e4fbce05af6c7947beb1704e45c9570944e3be16ee008b185e5e13baac97948299eb55341b2a359c3e2e54b9d6646ae167
+  languageName: node
+  linkType: hard
+
+"@remix-run/router@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "@remix-run/router@npm:1.7.0"
+  checksum: 80cab2fda9e4b9047c991e9b05b8bda8afa2adf7b85c785d7e6f593a399eb264d6a74302438babc81833b5d304eae0b22832f27552b1601e2ca9001d94b8e174
   languageName: node
   linkType: hard
 
@@ -3247,7 +3254,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "problondeweb@workspace:."
   dependencies:
-    "@remix-run/router": ^1.6.3
+    "@remix-run/router": ^1.7.0
     "@types/eslint": ^8.40.2
     "@types/prettier": ^2
     "@types/react": ^18.2.13
