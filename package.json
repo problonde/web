@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/eslint": "^8.44.1",
     "@types/prettier": "^2",
-    "@types/react": "^18.2.16",
+    "@types/react": "^18.2.17",
     "@types/react-dom": "^18.2.7",
     "@types/react-is": "^18.2.1",
     "@types/styled-components": "^5.1.26",
