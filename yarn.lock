@@ -406,12 +406,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-is@npm:^18.2.2":
-  version: 18.2.2
-  resolution: "@types/react-is@npm:18.2.2"
+"@types/react-is@npm:^18.2.3":
+  version: 18.2.3
+  resolution: "@types/react-is@npm:18.2.3"
   dependencies:
     "@types/react": "*"
-  checksum: b7b9ccdb1cfdd3c0341759abc5acc6cf356be27e8d0d7824072d2dbe4f8e3aa000ac3a6516f4c55420ea1a3adef8e3d189db7800e49486bb144aca69edf0e31d
+  checksum: 14d3b659bee8c7444faae3c3d8f04e30dad555a203f2c255a9eef027f71dd55f5d50b05eca0ec2097acfe5da4632bdb8816993f9c3e4ca3c0e3d1a6ad1f07993
   languageName: node
   linkType: hard
 
@@ -3216,7 +3216,7 @@ __metadata:
     "@types/prettier": ^3
     "@types/react": ^18.2.28
     "@types/react-dom": ^18.2.13
-    "@types/react-is": ^18.2.2
+    "@types/react-is": ^18.2.3
     "@types/styled-components": ^5.1.28
     "@typescript-eslint/eslint-plugin": ^6.8.0
     "@typescript-eslint/parser": ^6.8.0
