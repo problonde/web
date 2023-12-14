@@ -12,7 +12,7 @@
     "types": " tsc --noEmit"
   },
   "dependencies": {
-    "@remix-run/router": "^1.13.1",
+    "@remix-run/router": "^1.14.0",
     "esbuild": "^0.19.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
