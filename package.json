@@ -19,7 +19,7 @@
     "react-is": "^18.2.0",
     "react-router-dom": "^6.21.0",
     "react-use": "^17.4.2",
-    "styled-components": "^6.1.1",
+    "styled-components": "^6.1.2",
     "use-http": "^1.0.28",
     "util": "^0.12.5"
   },
