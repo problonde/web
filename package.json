@@ -24,7 +24,7 @@
     "util": "^0.12.5"
   },
   "devDependencies": {
-    "@types/eslint": "^8.56.3",
+    "@types/eslint": "^8.56.4",
     "@types/prettier": "^3",
     "@types/react": "^18.2.59",
     "@types/react-dom": "^18.2.19",
