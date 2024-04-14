@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 type Text = {
@@ -21,16 +21,20 @@ type Props = {
   className?: string;
 };
 
-const contentToTag = (content: Content) => {
+function contentToTag(content: Content) {
   switch (content.nodeType) {
     case "text":
-      return content.value;
+      return <Fragment key={content.value}>{content.value}</Fragment>;
     case "hyperlink":
-      return <Link href={content.data.uri}>{content.content[0].value}</Link>;
+      return (
+        <Link key={content.data.uri} href={content.data.uri}>
+          {content.content[0].value}
+        </Link>
+      );
     default:
-      return content;
+      return null;
   }
-};
+}
 
 export function Paragraph({ className, content }: Props) {
   return (

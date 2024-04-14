@@ -17,8 +17,8 @@ function ProjectItem({ project }: any) {
   return (
     <Item key={project.sys.id}>
       <SquareLink
-        image={fields.file.url}
-        color={project.fields.color}
+        $image={fields.file.url}
+        $color={project.fields.color}
         to={`${project.sys.id}`}
       >
         <span>{project.fields.projectName}</span>
@@ -42,7 +42,7 @@ function Filter({ filter, setFilter }: FilterProps) {
         <FilterLink
           href="#"
           key={`p-filt-${type}`}
-          active={type === filter}
+          $active={type === filter}
           onClick={wrapClick(() => setFilter(type))}
         >
           {type}
@@ -57,7 +57,7 @@ export function ProjectsGrid({ projects }: any) {
   const filteredProjects =
     filter !== ProjectType.All
       ? projects.filter((project: any) =>
-          project.fields.projectType.includes(filter)
+          project.fields.projectType.includes(filter),
         )
       : projects;
   const [, setBackground] = useGlobalBackground();
@@ -88,10 +88,10 @@ const FilterWrapper = styled.div`
   padding-bottom: 27px;
 `;
 
-const FilterLink = styled.a<{ active: boolean }>`
+const FilterLink = styled.a<{ $active: boolean }>`
   color: #000;
   font-size: 35px;
-  text-decoration: ${({ active }) => (active ? "line-through" : "none")};
+  text-decoration: ${({ $active }) => ($active ? "line-through" : "none")};
 
   &:hover {
     text-decoration: line-through;
@@ -111,7 +111,7 @@ const Item = styled.li`
   padding: 0;
 `;
 
-const SquareLink = styled(Link)<{ color: string; image: string }>`
+const SquareLink = styled(Link)<{ $color: string; $image: string }>`
   transition: all .2s;
   display: block;
   width: 100%;
@@ -125,7 +125,7 @@ const SquareLink = styled(Link)<{ color: string; image: string }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: ${({ image }) => `url("${image}")`}};
+  background-image: ${({ $image }) => `url("${$image}")`}};
   background-size: cover;
   background-position: center;
 
@@ -135,7 +135,7 @@ const SquareLink = styled(Link)<{ color: string; image: string }>`
 
   &:hover {
     background-image: none;
-    background-color: ${({ color }) => color};
+    background-color: ${({ $color }) => $color};
 
     span {
       opacity: 1;

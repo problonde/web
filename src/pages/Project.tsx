@@ -9,7 +9,9 @@ import { ProjectDetail } from "../components";
 export function Project() {
   const { projectId } = useParams();
   // add loading and error
-  if (!projectId) { return null; } // redirect to projects
+  if (!projectId) {
+    return null;
+  } // redirect to projects
   const [, setBackground] = useGlobalBackground();
   const { data, loading } = useProject(projectId);
   const { fields } = data;
@@ -26,7 +28,5 @@ export function Project() {
     return null;
   }
 
-  return (
-    <ProjectDetail project={fields} />
-  );
+  return <ProjectDetail project={fields} />;
 }
