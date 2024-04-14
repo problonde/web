@@ -30,7 +30,7 @@ export function Layout() {
   });
 
   return (
-    <Wrapper background={background}>
+    <Wrapper $background={background}>
       <TopLeft to="projects">PROJECTS</TopLeft>
       <BottomLeft to="contact">CONTACT</BottomLeft>
       <TopRight to="studio">STUDIO</TopRight>
@@ -48,12 +48,15 @@ export function Layout() {
           ))}
         </Bottom>
       )}
-      <Logo hidden={!!intersection && intersection.isIntersecting}>
+      <Logo $hidden={!!intersection && intersection.isIntersecting}>
         problonde
       </Logo>
       {isHome && <HugeLogo ref={intersectionRef}>problonde</HugeLogo>}
       <Outlet />
-      <Footer>created by Problonde Studio {date.getFullYear()}</Footer>
+      <Footer>
+        created by Problonde Studio
+        {date.getFullYear()}
+      </Footer>
     </Wrapper>
   );
 }
@@ -79,7 +82,7 @@ const backgroundCSS = ({
   }
 };
 
-const Wrapper = styled.div<{ background: Background }>`
+const Wrapper = styled.div<{ $background: Background }>`
   @keyframes background {
     0% {
       background-color: #ffffff;
@@ -100,7 +103,8 @@ const Wrapper = styled.div<{ background: Background }>`
       background-color: #ffffff;
     }
   }
-  ${backgroundCSS}
+
+  ${({ $background }) => backgroundCSS({ background: $background })}
   font-family: "General Sans", sans-serif;
   min-height: 100vh;
   position: relative;
@@ -108,10 +112,10 @@ const Wrapper = styled.div<{ background: Background }>`
   transition: all 0.2s;
 `;
 
-const Logo = styled.h1<{ hidden: boolean }>`
+const Logo = styled.h1<{ $hidden: boolean }>`
   font-size: 3.75rem;
   margin: 2rem auto 0;
-  opacity: ${({ hidden }) => (hidden ? "0" : "1")};
+  opacity: ${({ %hidden }) => ($hidden ? "0" : "1")};
   position: fixed;
   text-align: center;
   width: 100%;
