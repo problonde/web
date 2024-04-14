@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { useAsset } from "../hooks/contentful";
-import { ProjectType } from "../types";
+import { ProjectType, ProjectTypeValues } from "../types";
 import { BackgroundType, useGlobalBackground } from "../state/global";
 
 function ProjectItem({ project }: any) {
@@ -38,7 +38,7 @@ function Filter({ filter, setFilter }: FilterProps) {
   };
   return (
     <FilterWrapper>
-      {Object.values(ProjectType).map((type: ProjectType) => (
+      {ProjectTypeValues.map((type) => (
         <FilterLink
           href="#"
           key={`p-filt-${type}`}
@@ -53,9 +53,9 @@ function Filter({ filter, setFilter }: FilterProps) {
 }
 
 export function ProjectsGrid({ projects }: any) {
-  const [filter, setFilter] = useState<ProjectType>(ProjectType.All);
+  const [filter, setFilter] = useState<ProjectType>("All");
   const filteredProjects =
-    filter !== ProjectType.All
+    filter !== "All"
       ? projects.filter((project: any) =>
           project.fields.projectType.includes(filter),
         )
