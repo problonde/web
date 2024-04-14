@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { useAsset } from "../hooks/contentful";
 import { ProjectType, ProjectTypeValues } from "../types";
-import { BackgroundType, useGlobalBackground } from "../state/global";
+import { useGlobalBackground } from "../state/global";
 
 function ProjectItem({ project }: any) {
   const { data, loading } = useAsset(project.fields.mainImage.sys.id);
@@ -64,7 +64,7 @@ export function ProjectsGrid({ projects }: any) {
   const [, setBackground] = useGlobalBackground();
 
   useEffect(() => {
-    setBackground({ type: BackgroundType.Full, color: "#FFFFFF" });
+    setBackground({ type: "Full", color: "#FFFFFF" });
   }, []);
 
   return (

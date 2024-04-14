@@ -1,17 +1,11 @@
 import React, { CSSProperties, useRef } from "react";
 import styled from "styled-components";
-import {
-  useParams, useLocation, Link, Outlet,
-} from "react-router-dom";
+import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 import { useIntersection } from "react-use";
 
 import { Language } from "../types";
 import { useLinks } from "../hooks/contentful";
-import {
-  Background,
-  BackgroundType,
-  useGlobalBackground,
-} from "../state/global";
+import { Background, useGlobalBackground } from "../state/global";
 
 export function Layout() {
   const { lang } = useParams();
@@ -65,7 +59,7 @@ export function Layout() {
 
 function backgroundCSS(background: Background): CSSProperties {
   switch (background.type) {
-    case BackgroundType.Animated:
+    case "Animated":
       return {
         animationName: "background",
         animationDuration: "10s",
@@ -73,11 +67,11 @@ function backgroundCSS(background: Background): CSSProperties {
         animationIterationCount: "infinite",
         animationPlayState: "running",
       };
-    case BackgroundType.Half:
+    case "Half":
       return {
         background: `linear-gradient(180deg, ${background.color} "150vh"}, #FFFFFF 0%)`,
       };
-    case BackgroundType.Full:
+    case "Full":
     default:
       return { background: background.color };
   }
