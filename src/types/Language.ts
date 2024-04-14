@@ -1,6 +1,3 @@
-export enum Language {
-  Polish = "pl",
-  English = "en",
-}
+export type Language = "pl" | "en";
 
-export const DEFAULT_LANGUAGE = Language.Polish;
+export const DEFAULT_LANGUAGE: Language = "pl";
