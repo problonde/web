@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import { useProjects } from "../hooks/contentful";
-import { BackgroundType, useGlobalBackground } from "../state/global";
+import { useGlobalBackground } from "../state/global";
 
 import { ProjectData, ProjectFields } from "../types/Project";
 
@@ -12,21 +12,23 @@ export function ProjectsList() {
   const { items }: { items: [ProjectData] } = data;
   const [, setBackground] = useGlobalBackground();
 
-  const handleEnter = (fields: ProjectFields) => (
-    () => {
-      setBackground({ type: BackgroundType.Full, color: fields.color });
-    }
-  );
+  const handleEnter = (fields: ProjectFields) => () => {
+    setBackground({ type: "Full", color: fields.color });
+  };
 
   const handleLeave = () => {
-    setBackground({ type: BackgroundType.Animated, color: "#FFFFFF" });
+    setBackground({ type: "Animated", color: "#FFFFFF" });
   };
 
   return (
     <List>
       {items.map((item) => (
         <Item key={item.sys.id}>
-          <ProjectLink onMouseEnter={handleEnter(item.fields)} onMouseLeave={handleLeave} to={`projects/${item.sys.id}`}>
+          <ProjectLink
+            onMouseEnter={handleEnter(item.fields)}
+            onMouseLeave={handleLeave}
+            to={`projects/${item.sys.id}`}
+          >
             {item.fields.projectName}
           </ProjectLink>
         </Item>

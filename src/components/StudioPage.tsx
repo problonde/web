@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSimplePage } from "../hooks/contentful";
 
-import { BackgroundType, useGlobalBackground } from "../state/global";
+import { useGlobalBackground } from "../state/global";
 import { Asset } from "./Asset";
 import { Body } from "./Body";
 
@@ -14,7 +14,7 @@ export function StudioPage() {
   } = useSimplePage("4R8U3AHmYFGLsZiYpFPqKZ");
 
   useEffect(() => {
-    setBackground({ type: BackgroundType.Full, color: "#FFFFFF" });
+    setBackground({ type: "Full", color: "#FFFFFF" });
   }, []);
 
   if (!fields || loading) {
