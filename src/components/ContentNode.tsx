@@ -2,10 +2,7 @@ import React from "react";
 
 import { WrappedAsset, Paragraph } from ".";
 
-enum NodeType {
-  ParagraphNode = "paragraph",
-  AssetNode = "embedded-asset-block",
-}
+type NodeType = "paragraph" | "embedded-asset-block";
 
 type Props = {
   data: any;
@@ -16,9 +13,9 @@ type Props = {
 
 export function ContentNode({ data, className, content, nodeType }: Props) {
   switch (nodeType) {
-    case NodeType.ParagraphNode:
+    case "paragraph":
       return <Paragraph className={className} content={content} />;
-    case NodeType.AssetNode:
+    case "embedded-asset-block":
       return (
         <WrappedAsset className={className} assetId={data.target.sys.id} />
       );
