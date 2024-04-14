@@ -60,7 +60,9 @@ export function ProjectsGrid({ projects }: any) {
           project.fields.projectType.includes(filter),
         )
       : projects;
+
   const [, setBackground] = useGlobalBackground();
+
   useEffect(() => {
     setBackground({ type: BackgroundType.Full, color: "#FFFFFF" });
   }, []);

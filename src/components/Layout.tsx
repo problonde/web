@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
+import React, { CSSProperties, useRef } from "react";
 import styled from "styled-components";
-import { useParams, useLocation, Link, Outlet } from "react-router-dom";
+import {
+  useParams, useLocation, Link, Outlet,
+} from "react-router-dom";
 import { useIntersection } from "react-use";
 
 import { Language } from "../types";
@@ -30,7 +32,7 @@ export function Layout() {
   });
 
   return (
-    <Wrapper $background={background}>
+    <Wrapper style={backgroundCSS(background)}>
       <TopLeft to="projects">PROJECTS</TopLeft>
       <BottomLeft to="contact">CONTACT</BottomLeft>
       <TopRight to="studio">STUDIO</TopRight>
@@ -54,35 +56,34 @@ export function Layout() {
       {isHome && <HugeLogo ref={intersectionRef}>problonde</HugeLogo>}
       <Outlet />
       <Footer>
-        created by Problonde Studio{" "}
+        created by Problonde Studio
         {date.getFullYear()}
       </Footer>
     </Wrapper>
   );
 }
 
-const backgroundCSS = ({
-  background: { type, color },
-}: {
-  background: Background;
-}) => {
-  switch (type) {
+function backgroundCSS(background: Background): CSSProperties {
+  switch (background.type) {
     case BackgroundType.Animated:
-      return `
-        animation-name: background;
-        animation-duration: 10s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-play-state: running;`;
+      return {
+        animationName: "background",
+        animationDuration: "10s",
+        animationTimingFunction: "linear",
+        animationIterationCount: "infinite",
+        animationPlayState: "running",
+      };
     case BackgroundType.Half:
-      return `background: linear-gradient(180deg, ${color} "150vh"}, #FFFFFF 0%);`;
+      return {
+        background: `linear-gradient(180deg, ${background.color} "150vh"}, #FFFFFF 0%)`,
+      };
     case BackgroundType.Full:
     default:
-      return `background: ${color};`;
+      return { background: background.color };
   }
-};
+}
 
-const Wrapper = styled.div<{ $background: Background }>`
+const Wrapper = styled.div`
   @keyframes background {
     0% {
       background-color: #ffffff;
@@ -104,7 +105,6 @@ const Wrapper = styled.div<{ $background: Background }>`
     }
   }
 
-  ${({ $background }) => backgroundCSS({ background: $background })}
   font-family: "General Sans", sans-serif;
   min-height: 100vh;
   position: relative;
@@ -115,7 +115,7 @@ const Wrapper = styled.div<{ $background: Background }>`
 const Logo = styled.h1<{ $hidden: boolean }>`
   font-size: 3.75rem;
   margin: 2rem auto 0;
-  opacity: ${({ %hidden }) => ($hidden ? "0" : "1")};
+  opacity: ${({ $hidden }) => ($hidden ? "0" : "1")};
   position: fixed;
   text-align: center;
   width: 100%;
