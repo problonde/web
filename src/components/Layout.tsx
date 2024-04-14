@@ -54,7 +54,7 @@ export function Layout() {
       {isHome && <HugeLogo ref={intersectionRef}>problonde</HugeLogo>}
       <Outlet />
       <Footer>
-        created by Problonde Studio
+        created by Problonde Studio{" "}
         {date.getFullYear()}
       </Footer>
     </Wrapper>
