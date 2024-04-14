@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Language } from "../types";
+import { DEFAULT_LANGUAGE } from "../types";
 
 export function RootRedirect() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate(`/${Language.Polish}`);
+    navigate(`/${DEFAULT_LANGUAGE}`);
   });
 
   return null;

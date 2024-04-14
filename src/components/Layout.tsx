@@ -8,7 +8,7 @@ import { useLinks } from "../hooks/contentful";
 import { Background, useGlobalBackground } from "../state/global";
 
 export function Layout() {
-  const { lang } = useParams();
+  const { lang } = useParams() as { lang: Language };
   const { data } = useLinks();
   const { items } = data;
   const [background] = useGlobalBackground();
@@ -30,8 +30,8 @@ export function Layout() {
       <TopLeft to="projects">PROJECTS</TopLeft>
       <BottomLeft to="contact">CONTACT</BottomLeft>
       <TopRight to="studio">STUDIO</TopRight>
-      {lang === Language.English && <BottomRight to="/pl">PL</BottomRight>}
-      {lang === Language.Polish && <BottomRight to="/en">ENG</BottomRight>}
+      {lang === "en" && <BottomRight to="/pl">PL</BottomRight>}
+      {lang === "pl" && <BottomRight to="/en">ENG</BottomRight>}
       {isHome && (
         <Bottom>
           {items.map((link: any, index: number) => (
