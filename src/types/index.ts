@@ -1,2 +1,2 @@
 export { Language } from "./Language";
-export { ProjectType } from "./ProjectType";
+export * from "./ProjectType";
