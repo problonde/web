@@ -130,17 +130,13 @@ function backgroundCSS(background: Background): CSSProperties {
     case "Animated":
       return {
         animationName: styles.background,
-        animationDuration: "10s",
-        animationTimingFunction: "linear",
-        animationIterationCount: "infinite",
-        animationPlayState: "running",
       };
     case "Half":
       return {
-        background: `linear-gradient(180deg, ${background.color} "150vh"}, #FFFFFF 0%)`,
-      };
+        "--layout-bg-color": `linear-gradient(180deg, ${background.color} "150vh"}, #FFFFFF 0%)`,
+      } as CSSProperties;
     case "Full":
     default:
-      return { background: background.color };
+      return { "--layout-bg-color": background.color } as CSSProperties;
   }
 }
