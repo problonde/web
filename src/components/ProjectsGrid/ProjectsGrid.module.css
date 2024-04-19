@@ -1,0 +1,9 @@
+.wrapper {
+  min-height: 100vh;
+  padding: 190px 100px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+}

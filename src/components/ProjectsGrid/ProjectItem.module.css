@@ -1,0 +1,40 @@
+.item {
+  aspect-ratio: 1;
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.squareLink {
+  transition: all 200ms ease-in-out;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  line-height: 48px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-image: var(--sq-bg-image);
+
+  span {
+    transition: all 200ms ease-in-out;
+    opacity: 0;
+  }
+
+  &:hover {
+    background-image: none;
+    background-color: var(--sq-bg-color);
+
+    span {
+      opacity: 1;
+    }
+  }
+}
