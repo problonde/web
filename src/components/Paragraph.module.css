@@ -1,0 +1,18 @@
+.paragraph {
+  font-size: 1.8rem;
+  line-height: 2.25rem;
+  margin: 0 auto;
+  max-width: 63rem;
+  padding: 0 6rem 4rem;
+  white-space: pre-line;
+}
+
+.link {
+  color: #000000;
+  text-decoration-color: rgba(0, 0, 0, 0);
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    text-decoration-color: rgba(0, 0, 0, 1);
+  }
+}
