@@ -1,5 +1,6 @@
 export { Asset } from "./Asset";
 export { Body } from "./Body";
+export * from "./ContactWrapper";
 export { ContentNode } from "./ContentNode";
 export { Header } from "./Header";
 export { Layout } from "./Layout";

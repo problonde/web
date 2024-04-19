@@ -1,6 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-import { Body } from "../components";
+import { Body, ContactWrapper } from "../components";
 import { useSimplePage } from "../hooks/contentful";
 
 export function Contact() {
@@ -13,13 +12,8 @@ export function Contact() {
     return null;
   }
   return (
-    <Wrapper>
+    <ContactWrapper>
       <Body content={fields.body.content} />
-    </Wrapper>
+    </ContactWrapper>
   );
 }
-
-const Wrapper = styled.div`
-  padding-top: 15rem;
-  text-align: center;
-`;
