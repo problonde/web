@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styles from "./ProjectDetail.module.css";
 
 import { Body, Header, Asset } from ".";
 
@@ -7,14 +7,10 @@ export function ProjectDetail({ project }: any) {
   const { projectName, mainImage, body } = project;
 
   return (
-    <Wrapper>
+    <div className={styles.wrapper}>
       <Asset assetId={mainImage.sys.id} />
       <Header>{projectName}</Header>
       <Body content={body.content} />
-    </Wrapper>
+    </div>
   );
 }
-
-const Wrapper = styled.div`
-  padding-top: 190px;
-`;
