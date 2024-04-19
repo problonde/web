@@ -1,0 +1,23 @@
+.list {
+  font-size: 45px;
+  line-height: 61px;
+  min-height: 100vh;
+  padding-top: 190px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.item {
+  position: relative;
+  z-index: 1;
+}
+
+.link {
+  color: #000000;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: line-through;
+  }
+}

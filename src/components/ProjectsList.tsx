@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styles from "./ProjectsList.module.css";
 
 import { useProjects } from "../hooks/contentful";
 import { useGlobalBackground } from "../state/global";
@@ -21,42 +21,19 @@ export function ProjectsList() {
   };
 
   return (
-    <List>
+    <div className={styles.list}>
       {items.map((item) => (
-        <Item key={item.sys.id}>
-          <ProjectLink
+        <div className={styles.item} key={item.sys.id}>
+          <Link
+            className={styles.link}
             onMouseEnter={handleEnter(item.fields)}
             onMouseLeave={handleLeave}
             to={`projects/${item.sys.id}`}
           >
             {item.fields.projectName}
-          </ProjectLink>
-        </Item>
+          </Link>
+        </div>
       ))}
-    </List>
+    </div>
   );
 }
-
-const List = styled.div`
-  font-size: 45px;
-  line-height: 61px;
-  min-height: 100vh;
-  padding-top: 190px;
-  position: relative;
-  text-align: center;
-  width: 100%;
-`;
-
-const Item = styled.div`
-  position: relative;
-  z-index: 1;
-`;
-
-const ProjectLink = styled(Link)`
-  color: #000000;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: line-through;
-  }
-`;
