@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import classNames from "classnames";
+import styles from "./WrappedAsset.module.css";
 
 import { useAsset } from "../hooks/contentful";
 
@@ -18,39 +19,19 @@ export function WrappedAsset({ assetId, className }: Props) {
   const type = fields.file.contentType.split("/")[0];
   const tags = metadata.tags.map((tag: any) => tag.sys.id);
 
-  const ChosenWrapper = tags.includes("wide") ? Wrapper : NarrowWrapper;
-
   return (
-    <ChosenWrapper className={className}>
+    <div
+      className={classNames(styles.wrapper, {
+        [styles.narrowWrapper]: !tags.includes("wide"),
+      })}
+    >
       {type === "image" ? (
-        <Image src={fields.file.url} />
+        <img className={styles.image} alt="" src={fields.file.url} />
       ) : (
-        <Video controls>
+        <video className={styles.video} controls>
           <source src={fields.file.url} />
-        </Video>
+        </video>
       )}
-    </ChosenWrapper>
+    </div>
   );
 }
-
-const Wrapper = styled.div`
-  padding-bottom: 60px;
-`;
-
-const NarrowWrapper = styled(Wrapper)`
-  padding-left: 100px;
-  padding-right: 100px;
-`;
-
-const Image = styled.img`
-  display: block;
-  height: 100%;
-  margin: 0 auto;
-  max-height: 90vh;
-  object-fit: contain;
-  width: 100%;
-`;
-
-const Video = styled.video`
-  width: 100%;
-`;
