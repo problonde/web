@@ -23,6 +23,12 @@
   font-family: "General Sans", sans-serif;
   min-height: 100vh;
   position: relative;
+  background-color: var(--layout-bg-color);
+  animation-name: none;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
 
   transition: all 0.2s;
 }
