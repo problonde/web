@@ -11,6 +11,6 @@ esbuild
       "different-path-case": "info",
     },
     plugins: [],
-    outfile: "public/out.js",
+    outdir: "public",
   })
   .catch(() => process.exit(1));

@@ -10,7 +10,7 @@ const ctx = await esbuild.context({
   logOverride: {
     "different-path-case": "info",
   },
-  outfile: "public/out.js",
+  outdir: "public",
 });
 
 await ctx.watch();
