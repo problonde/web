@@ -13,7 +13,6 @@
   height: 100%;
   font-size: 36px;
   line-height: 48px;
-  padding: 10px;
   text-align: center;
   text-decoration: none;
   color: #000;
@@ -24,16 +23,22 @@
   background-position: center;
   background-image: var(--sq-bg-image);
 
-  span {
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
     transition: all 200ms ease-in-out;
+    background-color: var(--sq-bg-color);
     opacity: 0;
   }
 
   &:hover {
-    background-image: none;
-    background-color: var(--sq-bg-color);
-
-    span {
+    div {
       opacity: 1;
     }
   }

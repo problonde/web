@@ -23,7 +23,7 @@ export function ProjectItem({ project }: any) {
         className={styles.squareLink}
         to={`${project.sys.id}`}
       >
-        <span>{project.fields.projectName}</span>
+        <div>{project.fields.projectName}</div>
       </Link>
     </li>
   );
