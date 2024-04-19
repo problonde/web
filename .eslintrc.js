@@ -34,6 +34,7 @@ module.exports = {
     "react/prop-types": "off",
     "no-unused-vars": "off",
     "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/anchor-is-valid": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["error"],
