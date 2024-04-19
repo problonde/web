@@ -1,7 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 
+import classNames from "classnames";
 import { useAsset } from "../hooks/contentful";
+import styles from "./Asset.module.css";
 
 type Props = {
   assetId: string;
@@ -18,18 +19,14 @@ export function Asset({ assetId, className }: Props) {
   const type = fields.file.contentType.split("/")[0];
 
   return type === "image" ? (
-    <Image className={className} src={fields.file.url} />
+    <img
+      className={classNames(styles.img, className)}
+      alt=""
+      src={fields.file.url}
+    />
   ) : (
-    <Video className={className} controls>
+    <video className={classNames(styles.video, className)} controls>
       <source src={fields.file.url} />
-    </Video>
+    </video>
   );
 }
-
-const Image = styled.img`
-  display: block;
-`;
-
-const Video = styled.video`
-  width: 100%;
-`;

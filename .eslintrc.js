@@ -33,6 +33,7 @@ module.exports = {
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "no-unused-vars": "off",
+    "jsx-a11y/media-has-caption": "off",
     "@typescript-eslint/no-unused-vars": ["warn"],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["error"],
