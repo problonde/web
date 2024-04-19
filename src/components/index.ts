@@ -3,7 +3,7 @@ export { Body } from "./Body";
 export * from "./ContactWrapper";
 export { ContentNode } from "./ContentNode";
 export { Header } from "./Header";
-export { Layout } from "./Layout";
+export * from "./Layout";
 export { Paragraph } from "./Paragraph";
 export { ProjectDetail } from "./ProjectDetail";
 export * from "./ProjectsGrid";
