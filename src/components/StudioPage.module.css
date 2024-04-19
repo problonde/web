@@ -1,0 +1,21 @@
+.wrapper {
+  margin: 0 3.75rem;
+  padding-top: 12rem;
+  position: relative;
+}
+
+.asset {
+  position: absolute;
+  left: 0;
+  top: 12rem;
+  width: 50vw;
+}
+
+.body {
+  position: relative;
+  z-index: 1;
+  min-height: 50vw;
+  max-width: 80%;
+  padding-left: 20%;
+  padding-right: 0;
+}

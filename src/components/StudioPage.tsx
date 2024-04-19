@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
+import styles from "./StudioPage.module.css";
 import { useSimplePage } from "../hooks/contentful";
 
 import { useGlobalBackground } from "../state/global";
@@ -23,31 +23,9 @@ export function StudioPage() {
   const { image, body } = fields;
 
   return (
-    <Wrapper>
-      <SAsset assetId={image.sys.id} />
-      <SBody content={body.content} />
-    </Wrapper>
+    <div className={styles.wrapper}>
+      <Asset className={styles.asset} assetId={image.sys.id} />
+      <Body className={styles.body} content={body.content} />
+    </div>
   );
 }
-
-const Wrapper = styled.div`
-  margin: 0 3.75rem;
-  padding-top: 12rem;
-  position: relative;
-`;
-
-const SAsset = styled(Asset)`
-  position: absolute;
-  left: 0;
-  top: 12rem;
-  width: 50vw;
-`;
-
-const SBody = styled(Body)`
-  position: relative;
-  z-index: 1;
-  min-height: 50vw;
-  max-width: 80%;
-  padding-left: 20%;
-  padding-right: 0;
-`;
