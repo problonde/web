@@ -455,12 +455,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-is@npm:^18.2.4":
-  version: 18.2.4
-  resolution: "@types/react-is@npm:18.2.4"
+"@types/react-is@npm:^18.3.0":
+  version: 18.3.0
+  resolution: "@types/react-is@npm:18.3.0"
   dependencies:
     "@types/react": "*"
-  checksum: 2b69293a04609641be4963f5a9127aba3b7576cc15e3234fe6c341a940cbf3979e80bf848a43d93a24fb2ab09ad8faed54ac38c22037b159a0eea852e4dfa6eb
+  checksum: c7c9303a76902ecc2bd38a27047da8ffb9d5a19fe6e1f785e13698e7641e7afff0c6a49ddf1c22fb20b58f4fb689d83a887641f62db4ec2fdea3d04124a84023
   languageName: node
   linkType: hard
 
@@ -4407,7 +4407,7 @@ __metadata:
     "@types/prettier": ^3
     "@types/react": ^18.2.79
     "@types/react-dom": ^18.2.25
-    "@types/react-is": ^18.2.4
+    "@types/react-is": ^18.3.0
     "@typescript-eslint/eslint-plugin": ^7.7.1
     "@typescript-eslint/parser": ^7.7.1
     classnames: ^2.5.1
@@ -4422,7 +4422,7 @@ __metadata:
     prettier: ^3.2.5
     react: ^18.2.0
     react-dom: ^18.2.0
-    react-is: ^18.2.0
+    react-is: ^18.3.0
     react-router-dom: ^6.23.0
     react-use: ^17.5.0
     spa-http-server: ^0.9.0
@@ -4510,10 +4510,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^18.2.0":
-  version: 18.2.0
-  resolution: "react-is@npm:18.2.0"
-  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+"react-is@npm:^18.3.0":
+  version: 18.3.0
+  resolution: "react-is@npm:18.3.0"
+  checksum: 97a920d66547984632965458ca3951b23800e0258cb1b4aaeafc0f40f6f37c5fae00ec27fbb8b03f2b9d53505eb67e7c55d9e2254b42920cedc307230cdd2c5c
   languageName: node
   linkType: hard
 
