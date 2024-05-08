@@ -43,6 +43,6 @@
     "typescript": "^5.4.5",
     "typescript-language-server": "^4.3.3",
     "typescript-plugin-css-modules": "^5.1.0",
-    "vscode-langservers-extracted": "^4.8.0"
+    "vscode-langservers-extracted": "^4.10.0"
   }
 }
