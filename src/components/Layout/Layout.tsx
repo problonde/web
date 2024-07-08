@@ -7,6 +7,7 @@ import styles from "./Layout.module.css";
 import { Language } from "../../types";
 import { useLinks } from "../../hooks/contentful";
 import { Background, useGlobalBackground } from "../../state/global";
+import { DesktopGrid } from "./DesktopGrid";
 
 export function Layout() {
   const { lang } = useParams() as { lang: Language };
@@ -25,6 +26,8 @@ export function Layout() {
     rootMargin: "0px",
     threshold: 0.5,
   });
+
+  return <DesktopGrid />;
 
   return (
     <div className={styles.wrapper} style={backgroundCSS(background)}>
