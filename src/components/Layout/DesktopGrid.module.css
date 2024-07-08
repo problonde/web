@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  grid-template-columns: min-content auto min-content;
+
+  min-height: 100dvh;
+}
+
+.center {
+}
