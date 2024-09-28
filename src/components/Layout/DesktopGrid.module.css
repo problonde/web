@@ -13,8 +13,6 @@
 
   height: 100dvh;
 
-  padding: 3.75rem 5rem;
-
   font-family: "General Sans", sans-serif;
   background-color: var(--layout-bg-color);
   animation-name: none;
@@ -28,18 +26,26 @@
 
 .areaA {
   grid-area: a;
+  padding-left: 5rem;
+  padding-top: 3.75rem;
 }
 
 .areaB {
   grid-area: b;
+  padding-right: 5rem;
+  padding-top: 3.75rem;
 }
 
 .areaC {
   grid-area: c;
+  padding-left: 5rem;
+  padding-bottom: 3.75rem;
 }
 
 .areaD {
   grid-area: d;
+  padding-right: 5rem;
+  padding-bottom: 3.75rem;
 }
 
 .areaH {
@@ -69,11 +75,13 @@
   color: #000000;
   font-size: 2.2rem;
   text-align: center;
+  padding-bottom: 3.75rem;
 }
 
 .center {
   overflow-y: auto;
   height: 100%;
+  position: relative;
 }
 
 @keyframes background {

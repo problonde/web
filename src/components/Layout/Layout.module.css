@@ -1,9 +1,10 @@
 .logo {
   font-size: 3.75rem;
-  margin: 2rem auto 0;
+  margin: 0 auto 0;
   opacity: 1;
-  position: fixed;
+  position: sticky;
   text-align: center;
+  top: 3.5rem;
   width: 100%;
   z-index: 1;
 
@@ -26,5 +27,6 @@
   height: 12.5rem;
   line-height: 2.25rem;
   padding-top: 6.25rem;
+  padding-bottom: 15rem;
   text-align: center;
 }
