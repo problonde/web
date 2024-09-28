@@ -10,29 +10,34 @@ export function Layout() {
   const { lang } = useParams() as { lang: Language };
 
   const date = new Date();
-  const [intersects, setIntersects] = useState(false);
+  const [intersects, setIntersects] = useState(true);
 
   const location = useLocation();
   // eslint-disable-next-line
   const isHome = location.pathname.match(/^\/(pl|en)[\/]?$/);
   const intersectionRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        setIntersects(entries.slice(-1)[0].isIntersecting);
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5,
-      },
-    );
-    if (intersectionRef.current) {
-      observer.observe(intersectionRef.current);
+    let observer: any;
+    if (isHome) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          setIntersects(entries.slice(-1)[0].isIntersecting);
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.5,
+        },
+      );
+      if (intersectionRef.current) {
+        observer.observe(intersectionRef.current);
+      }
+    } else {
+      setIntersects(false);
     }
 
-    return () => observer.disconnect();
-  }, [intersects]);
+    return () => observer?.disconnect();
+  }, [isHome, intersects]);
 
   return (
     <DesktopGrid lang={lang}>
