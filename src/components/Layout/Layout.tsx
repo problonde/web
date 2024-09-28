@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, useLocation, Outlet } from "react-router-dom";
-import { useIntersection } from "react-use";
 import classNames from "classnames";
 import styles from "./Layout.module.css";
 
@@ -11,22 +10,35 @@ export function Layout() {
   const { lang } = useParams() as { lang: Language };
 
   const date = new Date();
+  const [intersects, setIntersects] = useState(false);
 
   const location = useLocation();
   // eslint-disable-next-line
   const isHome = location.pathname.match(/^\/(pl|en)[\/]?$/);
-  const intersectionRef = useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  });
+  const intersectionRef = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setIntersects(entries.slice(-1)[0].isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      },
+    );
+    if (intersectionRef.current) {
+      observer.observe(intersectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [intersects]);
 
   return (
     <DesktopGrid lang={lang}>
       <h1
         className={classNames(styles.logo, {
-          [styles.hidden]: !!intersection && intersection.isIntersecting,
+          [styles.hidden]: intersects,
         })}
       >
         problonde
