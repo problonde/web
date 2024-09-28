@@ -49,7 +49,7 @@ export function DesktopGrid({ children, lang }: Props) {
             <span key={link.fields.title}>
               {index > 0 && " / "}
               <a
-                className={styles.bigLink}
+                className={classNames(styles.bigLink)}
                 target="_blank"
                 href={link.fields.link}
                 rel="noreferrer"
