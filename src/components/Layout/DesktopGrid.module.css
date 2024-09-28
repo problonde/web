@@ -1,10 +1,97 @@
 .grid {
   display: grid;
-  grid-template-rows: min-content auto min-content;
-  grid-template-columns: min-content auto min-content;
 
-  min-height: 100dvh;
+  /* grid-template-rows: min-content auto min-content;
+  grid-template-columns: min-content auto min-content; */
+  grid-template-rows: 1fr 100fr 1fr;
+  grid-template-columns: 1fr 100fr 1fr;
+
+  grid-template-areas:
+    "a h b"
+    "y e x"
+    "c f d";
+
+  height: 100dvh;
+
+  font-family: "General Sans", sans-serif;
+  background-color: var(--layout-bg-color);
+  animation-name: none;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+  transition: all 0.2s;
+}
+
+.areaA {
+  grid-area: a;
+}
+
+.areaB {
+  grid-area: b;
+}
+
+.areaC {
+  grid-area: c;
+}
+
+.areaD {
+  grid-area: d;
+}
+
+.areaH {
+  grid-area: h;
+}
+
+.areaF {
+  grid-area: f;
+}
+
+.areaAll {
+  grid-area: 1 / 1 / 4 / 4;
+}
+
+.bigLink {
+  color: #000000;
+  text-decoration: none;
+  font-size: 2.2rem;
+  z-index: 1;
+  padding: 3.75rem 5rem;
+
+  &:hover {
+    text-decoration: line-through;
+  }
+}
+
+.bottomWrapper {
+  color: #000000;
+  font-size: 2.2rem;
+  text-align: center;
 }
 
 .center {
+  overflow-y: auto;
+  height: 100%;
+}
+
+@keyframes background {
+  0% {
+    background-color: #ffffff;
+  }
+  20% {
+    background-color: #e3ffb5;
+  }
+  40% {
+    background-color: #e57200;
+  }
+  60% {
+    background-color: #5dade2;
+  }
+  80% {
+    background-color: #cc8899;
+  }
+  100% {
+    background-color: #ffffff;
+  }
 }

@@ -1,11 +1,9 @@
 .list {
   font-size: 45px;
   line-height: 61px;
-  min-height: 100vh;
   padding-top: 190px;
   position: relative;
   text-align: center;
-  width: 100%;
 }
 
 .item {
