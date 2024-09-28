@@ -1,19 +1,14 @@
-import React, { CSSProperties, useRef } from "react";
-import { useParams, useLocation, Link, Outlet } from "react-router-dom";
+import React, { useRef } from "react";
+import { useParams, useLocation, Outlet } from "react-router-dom";
 import { useIntersection } from "react-use";
 import classNames from "classnames";
 import styles from "./Layout.module.css";
 
 import { Language } from "../../types";
-import { useLinks } from "../../hooks/contentful";
-import { Background, useGlobalBackground } from "../../state/global";
 import { DesktopGrid } from "./DesktopGrid";
 
 export function Layout() {
   const { lang } = useParams() as { lang: Language };
-  const { data } = useLinks();
-  const { items } = data;
-  const [background] = useGlobalBackground();
 
   const date = new Date();
 
@@ -27,86 +22,8 @@ export function Layout() {
     threshold: 0.5,
   });
 
-  return <DesktopGrid />;
-
   return (
-    <div className={styles.wrapper} style={backgroundCSS(background)}>
-      <Link
-        className={classNames(
-          styles.bigLink,
-          styles.fixedLink,
-          styles.top,
-          styles.left,
-        )}
-        to="projects"
-      >
-        PROJECTS
-      </Link>
-      <Link
-        className={classNames(
-          styles.bigLink,
-          styles.fixedLink,
-          styles.bottom,
-          styles.left,
-        )}
-        to="contact"
-      >
-        CONTACT
-      </Link>
-      <Link
-        className={classNames(
-          styles.bigLink,
-          styles.fixedLink,
-          styles.top,
-          styles.right,
-        )}
-        to="studio"
-      >
-        STUDIO
-      </Link>
-      {lang === "en" && (
-        <Link
-          className={classNames(
-            styles.bigLink,
-            styles.fixedLink,
-            styles.bottom,
-            styles.right,
-          )}
-          to="/pl"
-        >
-          PL
-        </Link>
-      )}
-      {lang === "pl" && (
-        <Link
-          className={classNames(
-            styles.bigLink,
-            styles.fixedLink,
-            styles.bottom,
-            styles.right,
-          )}
-          to="/en"
-        >
-          ENG
-        </Link>
-      )}
-      {isHome && (
-        <div className={styles.bottomWrapper}>
-          {items.map((link: any, index: number) => (
-            <span key={link.fields.title}>
-              {index > 0 && " / "}
-              <a
-                className={styles.bigLink}
-                target="_blank"
-                href={link.fields.link}
-                rel="noreferrer"
-              >
-                {link.fields.title}
-              </a>
-            </span>
-          ))}
-        </div>
-      )}
+    <DesktopGrid lang={lang}>
       <h1
         className={classNames(styles.logo, {
           [styles.hidden]: !!intersection && intersection.isIntersecting,
@@ -124,22 +41,6 @@ export function Layout() {
         created by Problonde Studio
         {date.getFullYear()}
       </div>
-    </div>
+    </DesktopGrid>
   );
-}
-
-function backgroundCSS(background: Background): CSSProperties {
-  switch (background.type) {
-    case "Animated":
-      return {
-        animationName: styles.background,
-      };
-    case "Half":
-      return {
-        "--layout-bg-color": `linear-gradient(180deg, ${background.color} "150vh"}, #FFFFFF 0%)`,
-      } as CSSProperties;
-    case "Full":
-    default:
-      return { "--layout-bg-color": background.color } as CSSProperties;
-  }
 }
