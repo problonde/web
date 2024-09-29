@@ -6,6 +6,8 @@ import { useGlobalBackground } from "../../state/global";
 import { Language } from "../../types";
 import { useLinks } from "../../hooks/contentful";
 import { backgroundCSS } from "./backgroundCSS";
+import { useIntersection } from "./useIntersection";
+import { useIsHome } from "./useIsHome";
 
 interface Props extends PropsWithChildren {
   lang: Language;
@@ -15,35 +17,8 @@ export function DesktopGrid({ children, lang }: Props) {
   const {
     data: { items },
   } = useLinks();
-  const [intersects, setIntersects] = useState(true);
-  const intersectionRef = useRef<HTMLHeadingElement>(null);
-
-  const location = useLocation();
-  // eslint-disable-next-line
-  const isHome = location.pathname.match(/^\/(pl|en)[\/]?$/);
-
-  useEffect(() => {
-    let observer: any;
-    if (isHome) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          setIntersects(entries.slice(-1)[0].isIntersecting);
-        },
-        {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.5,
-        },
-      );
-      if (intersectionRef.current) {
-        observer.observe(intersectionRef.current);
-      }
-    } else {
-      setIntersects(false);
-    }
-
-    return () => observer?.disconnect();
-  }, [isHome, intersects]);
+  const { intersects, ref: intersectionRef } = useIntersection();
+  const isHome = useIsHome();
 
   return (
     <div className={styles.grid} style={backgroundCSS(background)}>

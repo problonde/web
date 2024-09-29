@@ -1,5 +1,7 @@
 .wrapper {
   display: block;
+  min-height: 100dvh;
+
   font-family: "General Sans", sans-serif;
   background-color: var(--layout-bg-color);
   animation-name: none;
@@ -9,4 +11,33 @@
   animation-play-state: running;
 
   transition: all 0.2s;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 2.75rem;
+  opacity: 1;
+  text-align: center;
+  z-index: 1;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.logoWrapper {
+  min-height: 100dvh;
+}
+
+.hugeLogo {
+  display: block;
+  font-size: 10vh;
+  text-align: center;
+  transform: rotate(90deg);
+  position: relative;
+  top: 16rem;
 }
