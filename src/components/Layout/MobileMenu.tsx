@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import useTransition from "react-transition-state";
 import styles from "./MobileMenu.module.css";
 import { useLockBodyScroll } from "react-use";
+import { MobileHeader } from "./MobileHeader";
 
 interface Props {
   open: boolean;
@@ -27,8 +28,8 @@ export function MobileMenu({ open, close }: Props) {
   }
 
   return (
-    <div onClick={() => close()} className={classNames(styles.wrapper, status)}>
-      Ass
+    <div className={classNames(styles.wrapper, status)}>
+      <MobileHeader showLogo onClick={close} />
     </div>
   );
 }
