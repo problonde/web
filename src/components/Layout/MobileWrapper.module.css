@@ -16,13 +16,19 @@
 .header {
   position: sticky;
   top: 0;
+  z-index: 1;
+
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 100fr 1fr;
+
+  grid-template-areas: "a l m";
 }
 
 .logo {
   font-size: 2.75rem;
   opacity: 1;
   text-align: center;
-  z-index: 1;
+  grid-area: l;
 
   &.hidden {
     opacity: 0;

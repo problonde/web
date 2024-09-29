@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./MobileWrapper.module.css";
 import { Language } from "../../types";
@@ -8,12 +8,15 @@ import { useLinks } from "../../hooks/contentful";
 import classNames from "classnames";
 import { useIsHome } from "./useIsHome";
 import { useIntersection } from "./useIntersection";
+import { MobileMenu } from "./MobileMenu";
+import { MenuIcon } from "./MenuIcon";
 
 interface Props extends PropsWithChildren {
   lang: Language;
 }
 export function MobileWrapper({ lang, children }: Props) {
   const [background] = useGlobalBackground();
+  const [menuOpen, setMenuOpen] = useState(false);
   const {
     data: { items },
   } = useLinks();
@@ -29,6 +32,7 @@ export function MobileWrapper({ lang, children }: Props) {
         >
           problonde
         </h1>
+        <MenuIcon onClick={() => setMenuOpen(true)} />
       </div>
       {isHome && (
         <div className={styles.logoWrapper}>
@@ -38,6 +42,7 @@ export function MobileWrapper({ lang, children }: Props) {
         </div>
       )}
       {children}
+      <MobileMenu open={menuOpen} close={() => setMenuOpen(false)} />
     </div>
   );
 }
