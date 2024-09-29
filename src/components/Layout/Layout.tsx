@@ -21,8 +21,7 @@ export function Layout() {
     <Wrapper lang={lang}>
       <Outlet />
       <div className={styles.footer}>
-        created by Problonde Studio
-        {date.getFullYear()}
+        created by Problonde Studio {date.getFullYear()}
       </div>
     </Wrapper>
   );
