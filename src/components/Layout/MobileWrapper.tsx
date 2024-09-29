@@ -10,6 +10,7 @@ import { useIsHome } from "./useIsHome";
 import { useIntersection } from "./useIntersection";
 import { MobileMenu } from "./MobileMenu";
 import { MenuIcon } from "./MenuIcon";
+import { MobileHeader } from "./MobileHeader";
 
 interface Props extends PropsWithChildren {
   lang: Language;
@@ -26,14 +27,7 @@ export function MobileWrapper({ lang, children }: Props) {
 
   return (
     <div style={backgroundCSS(background)} className={styles.wrapper}>
-      <div className={styles.header}>
-        <h1
-          className={classNames(styles.logo, { [styles.hidden]: intersects })}
-        >
-          problonde
-        </h1>
-        <MenuIcon onClick={() => setMenuOpen(true)} />
-      </div>
+      <MobileHeader onClick={() => setMenuOpen(true)} showLogo={!intersects} />
       {isHome && (
         <div className={styles.logoWrapper}>
           <h1 className={styles.hugeLogo} ref={intersectionRef}>
