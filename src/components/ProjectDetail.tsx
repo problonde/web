@@ -5,6 +5,7 @@ import { Body, Header, Asset } from ".";
 
 export function ProjectDetail({ project }: any) {
   const { projectName, mainImage, body } = project;
+  console.log(projectName);
 
   return (
     <div className={styles.wrapper}>
