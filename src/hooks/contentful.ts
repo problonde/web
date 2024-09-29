@@ -5,6 +5,7 @@ import {
   CONTENTFUL_TOKEN,
   CONTENTFUL_URL,
 } from "../components/constants";
+import { ProjectData } from "../types/Project";
 
 const BASE = `${CONTENTFUL_URL}/spaces/${CONTENTFUL_SPACE}/`;
 
@@ -15,16 +16,22 @@ export const useLinks = () => {
   return { data, error, loading };
 };
 
-export const useProjects = () => {
+type Projects = { items: ProjectData[] };
+export function useProjects() {
   const url = entryUrl("project");
-  const { data = { items: [] }, error, loading } = useFetch(url, {}, []);
+  const {
+    data = { items: [] },
+    error,
+    loading,
+  } = useFetch<Projects>(url, {}, []);
 
   return { data, error, loading };
-};
+}
 
 export const useProject = (projectId: string) => {
   const url = entryUrl("project", projectId);
-  const { data = {}, error, loading } = useFetch(url, {}, []);
+  console.log(entryUrl(projectId));
+  const { data = {}, error, loading } = useFetch(url, {}, [url]);
 
   return { data, error, loading };
 };
@@ -43,7 +50,8 @@ export const useAsset = (assetId: string) => {
   return { data, error, loading };
 };
 
-const assetUrl = (id: string) => `${BASE}assets/${id}?access_token=${CONTENTFUL_TOKEN}`;
+const assetUrl = (id: string) =>
+  `${BASE}assets/${id}?access_token=${CONTENTFUL_TOKEN}`;
 
 const entryUrl = (type: string, id: string | null = null) => {
   if (id) {

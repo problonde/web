@@ -8,8 +8,9 @@ import { useGlobalBackground } from "../state/global";
 import { ProjectData, ProjectFields } from "../types/Project";
 
 export function ProjectsList() {
-  const { data } = useProjects();
-  const { items }: { items: [ProjectData] } = data;
+  const {
+    data: { items },
+  } = useProjects();
   const [, setBackground] = useGlobalBackground();
 
   const handleEnter = (fields: ProjectFields) => () => {

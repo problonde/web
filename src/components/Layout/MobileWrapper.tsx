@@ -36,7 +36,11 @@ export function MobileWrapper({ lang, children }: Props) {
         </div>
       )}
       {children}
-      <MobileMenu open={menuOpen} close={() => setMenuOpen(false)} />
+      <MobileMenu
+        lang={lang}
+        open={menuOpen}
+        close={() => setMenuOpen(false)}
+      />
     </div>
   );
 }
