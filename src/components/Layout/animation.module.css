@@ -1,0 +1,20 @@
+@keyframes background {
+  0% {
+    background-color: #ffffff;
+  }
+  20% {
+    background-color: #e3ffb5;
+  }
+  40% {
+    background-color: #e57200;
+  }
+  60% {
+    background-color: #5dade2;
+  }
+  80% {
+    background-color: #cc8899;
+  }
+  100% {
+    background-color: #ffffff;
+  }
+}
