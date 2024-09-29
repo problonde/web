@@ -19,6 +19,7 @@
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
     "react-router-dom": "^6.25.1",
+    "react-transition-state": "^2.1.2",
     "react-use": "^17.5.1",
     "use-http": "^1.0.28",
     "util": "^0.12.5"
