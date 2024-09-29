@@ -1,10 +1,11 @@
-import React, { CSSProperties, PropsWithChildren } from "react";
+import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 import styles from "./DesktopGrid.module.css";
-import { Background, useGlobalBackground } from "../../state/global";
+import { useGlobalBackground } from "../../state/global";
 import { Language } from "../../types";
 import { useLinks } from "../../hooks/contentful";
+import { backgroundCSS } from "./backgroundCSS";
 
 interface Props extends PropsWithChildren {
   lang: Language;
@@ -14,10 +15,35 @@ export function DesktopGrid({ children, lang }: Props) {
   const {
     data: { items },
   } = useLinks();
+  const [intersects, setIntersects] = useState(true);
+  const intersectionRef = useRef<HTMLHeadingElement>(null);
 
   const location = useLocation();
   // eslint-disable-next-line
   const isHome = location.pathname.match(/^\/(pl|en)[\/]?$/);
+
+  useEffect(() => {
+    let observer: any;
+    if (isHome) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          setIntersects(entries.slice(-1)[0].isIntersecting);
+        },
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.5,
+        },
+      );
+      if (intersectionRef.current) {
+        observer.observe(intersectionRef.current);
+      }
+    } else {
+      setIntersects(false);
+    }
+
+    return () => observer?.disconnect();
+  }, [isHome, intersects]);
 
   return (
     <div className={styles.grid} style={backgroundCSS(background)}>
@@ -25,6 +51,18 @@ export function DesktopGrid({ children, lang }: Props) {
         PROJECTS
       </Link>
       <div className={classNames(styles.areaAll, styles.center)}>
+        <h1
+          className={classNames(styles.logo, {
+            [styles.hidden]: intersects,
+          })}
+        >
+          problonde
+        </h1>
+        {isHome && (
+          <h1 className={styles.hugeLogo} ref={intersectionRef}>
+            problonde
+          </h1>
+        )}
         {children}
       </div>
       <Link className={classNames(styles.areaB, styles.bigLink)} to="studio">
@@ -62,20 +100,4 @@ export function DesktopGrid({ children, lang }: Props) {
       )}
     </div>
   );
-}
-
-function backgroundCSS(background: Background): CSSProperties {
-  switch (background.type) {
-    case "Animated":
-      return {
-        animationName: styles.background,
-      };
-    case "Half":
-      return {
-        "--layout-bg-color": `linear-gradient(180deg, ${background.color} "150vh"}, #FFFFFF 0%)`,
-      } as CSSProperties;
-    case "Full":
-    default:
-      return { "--layout-bg-color": background.color } as CSSProperties;
-  }
 }
