@@ -1,21 +1,35 @@
 .wrapper {
-  margin: 0 3.75rem;
-  padding-top: 12rem;
+  margin: 0;
+  padding: 2rem 1.25rem 0;
   position: relative;
 }
 
 .asset {
-  position: absolute;
-  left: 0;
-  top: 12rem;
-  width: 50vw;
 }
 
 .body {
   position: relative;
   z-index: 1;
   min-height: 50vw;
-  max-width: 80%;
-  padding-left: 20%;
-  padding-right: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .asset {
+    position: absolute;
+    left: 0;
+    top: 12rem;
+    width: 50vw;
+  }
+
+  .wrapper {
+    margin: 0 3.75rem;
+    padding-top: 12rem;
+  }
+
+  .body {
+    max-width: 80%;
+    padding-left: 20%;
+    padding-right: 0;
+  }
 }
