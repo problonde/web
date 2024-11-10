@@ -1,9 +1,18 @@
 .wrapper {
-  min-height: 100vh;
-  padding: 190px 100px;
+  min-height: 100dvh;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 33%);
+  grid-template-columns: repeat(2, 50%);
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    padding: 190px 100px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 33%);
+  }
 }
