@@ -6,10 +6,17 @@
 
 .link {
   color: #000;
-  font-size: 35px;
+  font-size: 20px;
+  text-decoration: none;
 
   &:hover,
   &.active {
     text-decoration: line-through;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .link {
+    font-size: 35px;
   }
 }
