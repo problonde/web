@@ -1,1 +1,1 @@
-export * from "./ProjectsGrid";
+export { ProjectsGrid } from "./ProjectsGrid";
