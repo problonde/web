@@ -4,6 +4,7 @@
   z-index: 1;
   display: grid;
   padding: 1rem;
+  width: 100%;
 
   align-items: center;
 
