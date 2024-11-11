@@ -10,6 +10,7 @@
   background: #fff;
 
   transition: all 200ms ease-in-out;
+  width: 100%;
 }
 
 .wrapper:global(.preEnter),
