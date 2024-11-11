@@ -4,8 +4,8 @@ import { ProjectType, ProjectTypeValues } from "../../types";
 import styles from "./Filter.module.css";
 
 type Props = {
-  filter: ProjectType;
-  setFilter: (type: ProjectType) => void;
+  filter: ProjectType | null;
+  setFilter: (type: ProjectType | null) => void;
 };
 export function Filter({ filter, setFilter }: Props) {
   const wrapClick = (callback: () => void) => (e: any) => {
@@ -22,7 +22,7 @@ export function Filter({ filter, setFilter }: Props) {
           })}
           href="#"
           key={`p-filt-${type}`}
-          onClick={wrapClick(() => setFilter(type))}
+          onClick={wrapClick(() => setFilter(type === filter ? null : type))}
         >
           {type}
         </a>

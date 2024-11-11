@@ -10,9 +10,13 @@
   text-decoration: none;
   text-align: center;
   padding: 0 0.5rem;
-
-  &:hover,
   &.active {
+    text-decoration: line-through;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
     text-decoration: line-through;
   }
 }

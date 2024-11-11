@@ -7,9 +7,11 @@ import { ProjectItem } from "./ProjectItem";
 import { Filter } from "./Filter";
 
 export function ProjectsGrid({ projects }: any) {
-  const [filter, setFilter] = useState<ProjectType>("All");
-  const filteredProjects = filter !== "All"
-    ? projects.filter((project: any) => project.fields.projectType.includes(filter))
+  const [filter, setFilter] = useState<ProjectType | null>(null);
+  const filteredProjects = filter
+    ? projects.filter((project: any) =>
+        project.fields.projectType.includes(filter),
+      )
     : projects;
 
   const [, setBackground] = useGlobalBackground();
